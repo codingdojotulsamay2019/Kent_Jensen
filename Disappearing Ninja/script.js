@@ -23,7 +23,7 @@ $(document).ready(function() {
     // $('.ninja8').click(function() { //hide
     //     $(this).hide();
     // })
-    $('#RESET').click(function() {
+    $('#RESTORE').click(function() {
         $('.ninja').show();
         // $('.ninja2').show();
         // $('.ninja3').show();
