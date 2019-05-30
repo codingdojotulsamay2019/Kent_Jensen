@@ -1,5 +1,8 @@
 $(document).ready(function() {
-    $('img').click(function() {
-        $(this).attr('data-alt-src')
+  $('img').click(function() {
+    var poof = $(this).attr('data-alt-src')
+    var unpoof = $(this).attr('src')
+    $(this).attr('src',poof)
+    $(this).attr('data-alt-src',unpoof)    
   })
 })
