@@ -1,0 +1,19 @@
+* {
+    margin:0px;
+    padding:0px;
+    background-color: black;
+}
+.row {
+    margin-left: 18%;
+    background-color: black;
+}
+#RESET {
+    color: black;
+    background-color: red;
+    width:75px;
+    height: 50px;
+    margin-left: 43%
+}
+.ninja {
+    background-color: black;
+}
