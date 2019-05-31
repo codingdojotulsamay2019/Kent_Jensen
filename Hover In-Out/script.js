@@ -1,16 +1,13 @@
 $(document).ready(function() {
     
-    $(this).hover(function {
+    $('img').hover(function() {
         // var front = $(this).attr('data-alt-src');
         // var back = $(this).attr('src');
-        (function(){$(this).attr('src')}),
-        (function(){$(this).attr('data-alt-src')})
+        $(this).attr('src',"img/back.jpg")
+    }, function() {
+        $(this).attr('src',"img/front.jpg")
     })
 })
 
-//APPLY HTML
-// $('p, h3, li').hover(
-//     function() {$(this).css('color','white');},
-//     function() {$(this).css('color','black');
 
-    
+        // (function() {$(this).html('<img src="img/front.jpg", data-alt-src="img/back.jpg">')

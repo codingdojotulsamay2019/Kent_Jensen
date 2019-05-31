@@ -6,8 +6,9 @@
     border: 5px solid black;
     display:inline-block;
 }
-.img {
+.catdog {
     display:inline-block;
     max-width: 300px;
     max-height: 400px;
+    border:3px pink;
 }
