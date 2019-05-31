@@ -1,0 +1,13 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+.row {
+    border: 5px solid black;
+    display:inline-block;
+}
+.img {
+    display:inline-block;
+    max-width: 300px;
+    max-height: 400px;
+}
