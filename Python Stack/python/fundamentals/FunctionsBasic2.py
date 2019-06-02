@@ -9,6 +9,8 @@ def countdown(x):
     return list
 
 countdown(10)
+print("-"*80)
+print("-"*80)
 
 # 2) Print and Return - Create a function that will receive a list with two numbers. 
 # Print the first value and return the second.
@@ -22,6 +24,8 @@ def print_and_return(list):
 
 print_and_return([5,10])
 
+print("-"*80)
+print("-"*80)
 
 # 3) First Plus Length - Create a function that accepts a list and 
 # returns the sum of the first value in the list plus the list's length.
@@ -34,8 +38,9 @@ def first_plus_length(list):
     return x+y
 
 first_plus_length([1,2,3,4,5])
+print("-"*80)
+print("-"*80)
 
-list.clear()
 # 4) Values Greater than Second - Write a function that accepts a list and creates a new list
 # containing only the values from the original list that are greater than its 2nd value. 
 # Print how many values this is and then return the new list. 
@@ -44,23 +49,38 @@ list.clear()
 # Example: values_greater_than_second([3]) should return False
 
 def values_greater_than_second(list):
-    listNew = []
+    newList=[]
     if(len(list)<2):
-        print("False")
         return False
-    for x in list():
-        if(list[x] > list[1]):
-            listNew.append(list[x])
-    print(len(listNew), listNew)
+    min=(list[1])
+    for x in range(0,len(list),1):
+        if(list[x] > min):
+            newList.append(list[x])
+    print(len(newList))
+    return(newList)
 
 values_greater_than_second([5,2,3,2,1,4])
-    
+values_greater_than_second([3])
 
 
+print("-"*80)
+print("-"*80)
 
-
-# 5) This Length, That Value - Write a function that accepts two integers as parameters: size and value. The function should create and return a list whose length is equal to the given size, and whose values are all the given value.
+# 5) This Length, That Value - Write a function that accepts two integers as parameters: 
+# size and value. The function should create and return a list whose length is equal 
+# to the given size, and whose values are all the given value.
 # Example: length_and_value(4,7) should return [7,7,7,7]
 # Example: length_and_value(6,2) should return [2,2,2,2,2,2]
 
+def length_and_value(size,value):
+    newList=[]
+    for x in range(0,size,1):
+        newList.append(value)
+    return(newList)
 
+length_and_value(4,7)
+length_and_value(6,2)
+
+
+print("-"*80)
+print("-"*80)
