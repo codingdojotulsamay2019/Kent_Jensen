@@ -1,6 +1,7 @@
 arr=[0,4,7,2,8,5,6,3,1]
 def bubblesort(arr):
     for j in range(len(arr)-1):
+        print("\n\n", "-"*100, "Iteration", j)
         for i in range(len(arr)-1-j):
             #print("\n","*"*80, "\nindex ", i, "value", arr[i])
             print("\n","*"*80, "\ncomparing", arr[i], arr[i+1])
