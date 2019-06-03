@@ -53,7 +53,7 @@ print('-'*80)
 print('-'*80)
 print('-'*80)
 
-# Problem 2) -- still need to finish/make work
+# Problem 2)
 
 students = [
     {'first_name':  'Michael', 'last_name' : 'Jordan'},
@@ -91,7 +91,7 @@ def iterateDictionary2(key, some_list):
 
 iterateDictionary2('first_name', students)
 iterateDictionary2('last_name', students)
-#output
+# output
 # Michael
 # John
 # Mark
