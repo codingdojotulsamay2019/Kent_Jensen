@@ -1,0 +1,3 @@
+def beCheerful():
+    print("Hello")
+beCheerful("michael")
