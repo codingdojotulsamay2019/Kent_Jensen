@@ -4,17 +4,17 @@ class User:
         self.email = email_address
         self.account_balance = 0
     def make_deposit(self, amount):
-    	self.account_balance += amount
-        return self.self
+        self.account_balance += amount
+        return self
     def make_withdrawal(self,amount):
         self.account_balance -= amount
-        return self.self
-    def display_user_balance(self): 
+        return self
+    def display_user_balance(self):
         print("User: ", self.name, ", Balance: $", self.account_balance)
-        return self.self
-    def transfer_money(self, other_user, amount):   
+        return self
+    def transfer_money(self, other_user, amount):
         self.account_balance -= amount
-        other_user.account_balance += amount     
+        other_user.account_balance += amount
         print("Transferring $", amount)
 
 guido = User("Guido van Rossum","guido@python.com")
