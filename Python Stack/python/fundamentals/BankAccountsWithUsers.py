@@ -1,54 +1,53 @@
 # USER CLASS
 class User:
-    def __init__(self, name, email, balance, account):
+    def __init__(self, name, email, BankAccount):
         self.name = name
         self.email = email
-        self.balance = balance
-        self.account = account(int_rate = 0.02, balance = 0)
-        self.int_rate = int_rate
+        self.BankAccount = BankAccount
+        self.BankAccount.balance = 0
+        self.BankAccount.balance = BankAccount.balance
+        self.int_rate = BankAccount.int_rate
+        self.BankAccount = BankAccount
     def make_deposit(self, amount):
-        self.account.deposit(amount)
+        BankAccount.deposit(amount)
         return self
     def make_withdrawal(self,amount):
-        self.account.withdraw(amount)
+        BankAccount.withdraw(amount)
         return self
     def display_user_balance(self):
-        print("User: ", self.name, ", Balance: $", self.balance)
+        print("User: ", self.name, ", Balance: $", BankAccount.balance)
         return self
     def transfer_money(self, other_user, amount):
-        self.account.balance -= amount
-        other_user.balance += amount
+        BankAccount.balance -= amount
+        other_user.BankAccount.balance += amount
         print("Transferring $", amount)
-    def account(self, account):
-        self.account = account
-        self.account.balance = self.balance
 
 
 # BANK ACCOUNT CLASS
-class account:
-    def __init__(self, account, int_rate, balance):
-        self.account = account
+class BankAccount:
+    def __init__(self, name, int_rate, balance):
+        self.name = name
         self.int_rate = .025
-        self.balance = 0+balance
+        self.balance = 0+balance 
     def deposit(self, amount):
         self.balance += amount
-        print("Deposit of $", amount, "into", self.account, "account processed.")
+        print("Deposit of $", amount, "into", self.name, "Account processed.")
         print("New Balance: $", self.balance)
         print("-"*50)
         return self
     def withdraw(self, amount):
         self.balance -= amount
-        print("Withdrawal from",self.account, "in the amount of $",amount, "processed.")     
+        print("Withdrawal from",self.name, "in the amount of $",amount, "processed.")     
         print("New Balance: $", self.balance)
         print("-"*50)
         return self
     def display_account_info(self):
-        print(self.account,"account ----- Balance: $", self.balance)
+        print(self.name,"Account ----- Balance: $", self.balance)
         print("-"*50)
     def yield_interest(self):
         print("*"*50)
         print("*"*50)
-        print("Accumulating Interest on", self.account, "account")
+        print("Accumulating Interest on", self.name, "Account")
         print("Before Interest: $", self.balance)
         self.balance = self.balance * (1+(self.int_rate))
         print("After Interest: $", self.balance)
@@ -57,9 +56,9 @@ class account:
         return self
 
 #USER/ACCOUNT CREATION
-guido = User("Guido van Rossum","guido@python.com",300,"Checking")
-monty = User("Monty Python", "monty@python.com",500,"Checking")
-larry = User("Larry Longfield", "larry@python.com",1000,"Savings")
+guido = User("Guido van Rossum","guido@python.com","Checking",.02,1500)
+monty = User("Monty Python", "monty@python.com","Checking",.02,800)
+larry = User("Larry Longfield", "larry@python.com","Savings",.02,10000)
 #TEST AREA
 guido.make_deposit(100).make_deposit(500).make_deposit(200).make_withdrawal(300).display_user_balance()
 
