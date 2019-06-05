@@ -1,0 +1,25 @@
+.board {
+    width:auto;
+    height:auto;
+    font-size: 0px;
+}
+.row{
+    line-height: 0;
+}
+.box1{
+    display:inline-block;
+    width:100px;
+    height:100px;
+    background-color:red;
+    margin-left: -4px;
+    margin-bottom: -4px;
+}
+.box2{
+    display:inline-block;
+    width:100px;
+    height:100px;
+    background-color: black;
+    margin-left: -4px;
+    margin-bottom: -4px;
+
+}
