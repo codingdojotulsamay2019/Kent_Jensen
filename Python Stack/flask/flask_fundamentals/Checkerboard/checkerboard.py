@@ -15,7 +15,3 @@ def size_color(x,y,input1,input2):
 if __name__=="__main__":
     app.run(debug=True)
 
-
-#EXPECTED:
-#localhost:5000/ should load an 8x8 checkerboard
-#localhost:5000/(x)/(y) should load an x by y checkerboard
