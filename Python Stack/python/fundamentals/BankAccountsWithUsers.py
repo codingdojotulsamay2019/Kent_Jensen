@@ -4,21 +4,18 @@ class User:
         self.name = name
         self.email = email
         self.BankAccount = BankAccount(account_name,int_rate,balance)
-        self.BankAccount.name = account_name
-        self.BankAccount.int_rate = int_rate
-        self.BankAccount.balance = balance
     def make_deposit(self, amount):
-        BankAccount.deposit(self,amount)
+        self.BankAccount.deposit(amount)
         return self
     def make_withdrawal(self,amount):
-        BankAccount.withdraw(self,amount)
+        self.BankAccount.withdraw(amount)
         return self
     def display_user_balance(self):
-        print("User: ", self.name, ", Balance: $", BankAccount.balance)
+        print("User: ", self.name, ", Balance: $", self.BankAccount.balance)
         return self
     def transfer_money(self, other_user, amount):
-        BankAccount.balance(- amount)
-        other_user.BankAccount.balance(+ amount)
+        self.BankAccount.balance-=amount
+        other_user.BankAccount.balance+=amount
         print("Transferring $", amount)
 
 
@@ -57,18 +54,19 @@ class BankAccount:
 #USER/ACCOUNT CREATION
 guido = User("Guido van Rossum","guido@python.com","Checking",.02,1500)
 monty = User("Monty Python", "monty@python.com","Checking",.02,800)
-larry = User("Larry Longfield", "larry@python.com","Savings",.02,10000)
+larry = User("Larry Longfield", "larry@python.com","Savings",.08,10000)
 #TEST AREA
+print("GUIDO")
 guido.make_deposit(100).make_deposit(500).make_deposit(200).make_withdrawal(300).display_user_balance()
 
 print("*"*80)
 print("*"*80)
-
+print("MONTY")
 monty.make_deposit(50).make_deposit(250).make_withdrawal(100).make_withdrawal(150).display_user_balance()
 
 print("*"*80)
 print("*"*80)
-
+print("LARRY")
 larry.make_deposit(1000).make_withdrawal(250).make_withdrawal(250).make_withdrawal(250).display_user_balance()
 
 print("*"*80)
@@ -76,10 +74,21 @@ print("*"*80)
 print("INITIATING TRANSFER")
 print("*"*80)
 print("*"*80)
+print("STARTING BALANCES")
 guido.display_user_balance()
 larry.display_user_balance()
 guido.transfer_money(larry,100)
+print("ENDING BALANCES")
 guido.display_user_balance()
 larry.display_user_balance()
+print("*"*80)
+print("*"*80)
+print("TRANSFER COMPLETE")
+print("*"*80)
+print("*"*80)
 
+#Ending Account Balances
+guido.display_user_balance()
+monty.display_user_balance()
+larry.display_user_balance()
 
