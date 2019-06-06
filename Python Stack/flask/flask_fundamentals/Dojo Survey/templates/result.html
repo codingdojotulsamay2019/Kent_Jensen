@@ -9,8 +9,26 @@
     </head>
     <body>
         <h1>Survey Result</h1>
-        <p>Name: {{ username }}</p>
-        <p>Email: {{ em }}</p>
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Location:</th>
+                <th scope="col">Language:</th>
+                <th scope="col">Enjoy learning?</th>
+                <th scope="col">Comments:</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">{{ username }}</th>
+                <td>{{ loc }}</td>
+                <td>{{ lan }}</td>
+                <td>{{ learn }}</td>
+                <td>{{ com }}</td>
+            </tr>
+            </tbody>
+          </table>
         <script></script>
     </body>
 </html>

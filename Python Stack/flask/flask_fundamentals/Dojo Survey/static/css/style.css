@@ -1,7 +1,5 @@
 /*linked to BOOTSTRAP*/
-.h1 {
+h1 {
     text-align: center;
-}
-.p {
-    text-align: center;
+    color: lightskyblue;
 }
