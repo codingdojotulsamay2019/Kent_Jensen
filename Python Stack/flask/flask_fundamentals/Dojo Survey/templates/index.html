@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="DojoSurvey">
+        <title>Dojo Survey</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <h1>A Survey</h1>
+        <form action='/result' method='POST'>
+        <p>Name: <input type='text' name='name'></p>
+        <p>Email: <input type='text' name='email'></p>
+        <input type='submit'>
+        </form>
+        <script></script>
+    </body>
+</html>
