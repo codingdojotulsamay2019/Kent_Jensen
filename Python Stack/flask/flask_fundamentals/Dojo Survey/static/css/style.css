@@ -1,5 +1,7 @@
 /*linked to BOOTSTRAP*/
-* {
-    margin:0px;
-    padding:0px;
+.h1 {
+    text-align: center;
+}
+.p {
+    text-align: center;
 }
