@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Counter</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="counter">
+                <h1>Counter</h1>
+                    <p>COUNTER HERE</p>
+            </div>
+            <div class="button">
+                <button>Add two</button>
+                <button>RESET COUNTER</button>
+                <button></button>
+            </div>
+        </div>
+<!--
+Have the root route render a template that displays the number of times the client has visited this site. Refresh the page several times to ensure the counter is working. 
+Add a "/destroy_session" route that clears the session and redirects to the root route. Test it. 
+NINJA BONUS: Add a +2 button underneath the counter and a new route that will increment the counter by 2 
+NINJA BONUS: Add a Reset button to reset the counter 
+SENSEI BONUS: Add a form that allows the user to specify the increment of the counter and have the counter increment accordingly 
+SENSEI BONUS: Adjust your code to display both how many times the user has actually visited the page, as well as the value of the counter, given the above functionality 
+SENSEI BONUS: Decode the cookie information as shown in the video
+-->
+    </body>
+</html>
