@@ -1,0 +1,9 @@
+pymysql.err.OperationalError: (1045, "Access denied for user 'roott'@'localhost' (using password: YES)")
+ - wrong username
+
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+ - no password input
+
+NameError: name 'd' is not defined
+ - db = d, instead of db = db.
+

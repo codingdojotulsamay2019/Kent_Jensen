@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="C&R Pets">
+    <title>C&R Pets</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+        <h1>All the Pets!</h1>
+        <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">ID#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Type (Species)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for pet in all_pets %}
+                    <tr>
+                    <td>{{ pet.id }}</td>
+                    <td>{{ pet.name }}</td>
+                    <td>{{ pet.type }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+              </table>
+              <hr>        
+              <h1>Add a Pet</h1>
+            <!--INSERT form (name, type), "add" button-->
+        <form action="/add" method="POST">
+            <div class="form-group">
+                <label for="formGroupExampleInput">Pet Name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Pet Name" name = "name">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Type (species)</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Pet Type" name = "type"> 
+            </div>
+            <input class="btn btn-primary" type="submit" value="Add">
+        </form>
+        </div>  
+    </body>
+</html>
