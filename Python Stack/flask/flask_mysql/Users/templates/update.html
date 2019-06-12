@@ -3,28 +3,33 @@
     <head>
     <meta charset="UTF-8">
     <meta name="description" content="UPDATE">
-    <title>Update User</title>
+    <title>Edit User</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 	</head>
 	<body>
-        <h1>Edit User {{user_id[0][id]}}</h1>
-        <a href="index.html" content="Home">HOME</a>
-        <form action="/add" method="POST">
+        <h1>Edit User {{all_users[0][user_id]}}</h1>
+        <a href="../users" content="Home">HOME</a>
+        <form action="user/{{all_users[0][id]}}/update" method="POST">
             <div class="form-group">
                 <label for="formGroupExampleInput">First Name</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="{{ .user.first_name }}" content=placeholder="{{ all_users.user.first_name }}" name = "First Name">
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="{{ all_users[0]["first_name"] }}" content=placeholder="{{ all_users[0]["first_name"] }}" name = "First Name">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput2">Last Name</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="{{ all_users.user.last_name }}" content="{{ all_users.user.last_name }}" name = "Last Name"> 
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="{{ all_users[0]["last_name"] }}" content="{{ all_users[0]["last_name"] }}" name = "Last Name"> 
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput">Email</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="{{ all_users.user.email }}" content="{{ all_users.user.email }}" name = "Email">
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="{{{ all_users[0]["email"] }}" content="{{ all_users[0]["email"] }}" name = "Email">
             </div>
             <input class="btn btn-primary" type="submit" value="Create" content="Create">
         </form>
 	<script></script>
 	</body>
 </html>
+
+<p>Full Name: {{all_users[0]["first_name"]}} {{all_users[0]["last_name"]}}</p>
+        <p>Email: {{all_users[0]["email"]}}</p>
+        <p>Created On: {{all_users[0]["created_at"]}}</p>
+        <p>Last Updated On: {{all_users[0]["updated_at"]}}

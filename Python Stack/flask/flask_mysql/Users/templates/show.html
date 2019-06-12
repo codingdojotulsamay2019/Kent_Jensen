@@ -3,18 +3,19 @@
     <head>
     <meta charset="UTF-8">
     <meta name="description" content="SHOW">
-    <title>Show</title>
+    <title>User {{all_users[0][id]}}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 	</head>
 	<body>
-        <h1>User {{user_id[0][id]}}</h1>
-        <a href="index.html" content="Home">HOME</a>
+        <h1>User {{all_users[0][id]}}</h1>
+        <a href="../users" content="Home">HOME</a>
         {% for user in all_users %}
-        <p>Full Name: {{user_id[0]["first_name"]}} {{user_id[0]["last_name"]}}</p>
-        <p>Email: {{user_id[0]["email"]}}</p>
-        <p>Created On: {{user_id[0]["created_at"]}}</p>
-        <p>Last Updated On: {{user_id[0]["updated_at"]}}</p>
+        <p>Full Name: {{all_users[0]["first_name"]}} {{all_users[0]["last_name"]}}</p>
+        <p>Email: {{all_users[0]["email"]}}</p>
+        <p>Created On: {{all_users[0]["created_at"]}}</p>
+        <p>Last Updated On: {{all_users[0]["updated_at"]}}</p>
+        {% end for %}
 	<script></script>
 	</body>
 </html>
