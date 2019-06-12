@@ -28,15 +28,20 @@ def create():
         'id' : user_id
     }
     create = mysql.query_db (query,data)
-    return redirect('/users/'+ str(create([id]))
+    return redirect('/users/'+ str(create([id])))
 
-# /users/<id> - GET - method should return a template that displays the specific user's information 
-@app.route("/users/<user['id']>")
+# /users/<id> - GET - method should return a template that displays the specific user's information
+@app.route("/users/<user_id>")
 def show(user_id):
     mysql = connectToMySQL('users')
     query = "SELECT * FROM users WHERE users.id = %(user_id)s;"
     data = {
-        "id" : user_id
+        "id" : user_id,
+        'fn' : user_id.first_name,
+        'ln' : user_id.last_name,
+        'em' : user_id.email,
+        'ca' : user_id.created_at,
+        'ua' : user_id.updated_at
     }
     show_user = mysql.query_db(query,data)
     return render_template('show.html', user_id = show_user)
