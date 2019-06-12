@@ -1,15 +1,14 @@
-from flask import Flask, render_template, redirect, request, session
+from flask import Flask, render_template, redirect, request
 from MySQLConnection import connectToMySQL    # import the function that will return an instance of a connection
 app = Flask(__name__)
-
 
 
 # /users - GET - method should return a template that displays all the users in the table 
 @app.route("/users")
 def index():
     mysql = connectToMySQL('users')	       
-    users = mysql.query_db('SELECT * FROM users;')  # !!!check all the queries!!!
-    print(users)
+    query = 'SELECT * FROM users;'  # !!!check all the queries!!!
+    show_index=(query,data)
     return render_template('index.html', all_users=users)
 
 # /users/new- GET - method should return a template containing the form for adding a new user 
@@ -29,20 +28,40 @@ def create():
         'em' : request.form['email']
     }
     create = mysql.query_db (query,data)
-    return redirect('/users')
+    return redirect('/users/'+ str(xuser_id))
 
 # /users/<id> - GET - method should return a template that displays the specific user's information 
-@app.route("/users/{{user.id}}")
-def show():
+@app.route("/users/<xuser_id>")
+def show(xuser_id):
     mysql = connectToMySQL('users')
-    query = mysql.query_db('SELECT * FROM users WHERE id = user_id')
-    return render_template('show.html')
+    query = "SELECT * FROM users WHERE users.id = %(user_id)s;"
+    data = {
+        "user_id" : xuser_id
+    }
+    show_user = mysql.query_db(query,data)
+    return render_template('show.html', xuser_id = show_user)
+
+
+# Example: 
+# @app.route("/users/<huser_id>")
+# def show_user(huser_id):
+#     mysql = connectToMySQL('exusers')
+#     query = "SELECT * FROM users WHERE users.id = %(user_id)s;"
+#     data = {
+#         "user_id": huser_id
+#     }
+#     usersdb = mysql.query_db(query, data)
+#     print(usersdb)
+#     return render_template("show.html", userid = usersdb)
+
+
+
 
 # /users/<id>/edit - GET - method should return a template that displays a form for editing the user with the id specified in the url 
 @app.route("/users/<user_id>/edit")
 def edit():
     mysql = connectToMySQL('users')
-    query = mysql.query_db('SELECT * FROM users;')
+    query = 'SELECT * FROM users;'
     return render_template('update.html')
 
 # /users/<id>/update - POST - method should update the specific user in the database, then redirect to /users/<id> 
@@ -56,7 +75,7 @@ def update():
         'em' : request.form['email']
     }
     update = mysql.query_db (query,data)
-    return redirect('/users/<user_id>')
+    return redirect('/users/'+ str(user_id))
 
 # /users/<id>/destroy - GET - method should delete the user with the specified id from the database, then redirect to /users
 @app.route("/users/<user_id>/destroy")
