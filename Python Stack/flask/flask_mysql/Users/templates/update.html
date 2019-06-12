@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="UPDATE">
+    <title>Update User</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+	</head>
+	<body>
+        <h1>Edit User {{userid[0][id]}}</h1>
+        <a href="index.html" content="Home">HOME</a>
+        <form action="/add" method="POST">
+            <div class="form-group">
+                <label for="formGroupExampleInput">First Name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="{{ .user.first_name }}" content=placeholder="{{ all_users.user.first_name }}" name = "First Name">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Last Name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="{{ all_users.user.last_name }}" content="{{ all_users.user.last_name }}" name = "Last Name"> 
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Email</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="{{ all_users.user.email }}" content="{{ all_users.user.email }}" name = "Email">
+            </div>
+            <input class="btn btn-primary" type="submit" value="Create" content="Create">
+        </form>
+	<script></script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="INDEX">
+    <title>Users</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+	</head>
+	<body>
+        <h1>All Users</h1>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Created At</th>
+                    <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in all_users %}
+                    <tr>
+                    <td><a href="/users/{{userid[0][id]}}">{{userid[0][id]}}</a></td>
+                    <td>{{ [user.first_name, user.last_name]|join(' ') }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.created_at }}</td>
+                    <td><a href url="/users/{{user.id}}" content="Show">Show </a> | <a href url="/users/{{userid[0][id]}}/edit" content="Edit"> Edit </a> | <a href url="/users/{{userid[0][id]}}/destroy" content="Delete">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                </table>
+        </div>
+        <a href url="create.html" content="Add a New User">Add a New User</a>
+	<script></script>
+	</body>
+</html>
