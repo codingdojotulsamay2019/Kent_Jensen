@@ -56,7 +56,7 @@ def edit(user_id):
 @app.route("/users/<user_id>/update", methods=["POST"]) #Actually pushes new user data to the server, avoid injection!
 def update(user_id):
     mysql = connectToMySQL('users')
-    query = "UPDATE users SET first_name = %(fn)s, last_name = %(ln)s, email = %(em)s WHERE id= user.id"
+    query = "UPDATE users SET first_name = %(fn)s, last_name = %(ln)s, email = %(em)s WHERE id= %(id)s;"
     data = {
         'fn' : request.form['first_name'],
         'ln' : request.form['last_name'],
