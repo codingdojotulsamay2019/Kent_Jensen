@@ -8,23 +8,25 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 	</head>
 	<body>
-        <h1>Edit User {{all_users[0][user_id]}}</h1>
-        <a href="../users" content="Home">HOME</a>
-        <form action="user/{{all_users[0][id]}}/update" method="POST">
+        {% for user in user_id %}
+        <h1>Edit User {{user['user_id']}}</h1>
+        <a href="../../users" content="Home">HOME</a>
+        <form action="user/{{user[id]}}/update" method="POST">
             <div class="form-group">
                 <label for="formGroupExampleInput">First Name</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="{{ all_users[0]["first_name"] }}" content=placeholder="{{ all_users[0]["first_name"] }}" name = "First Name">
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="{{ user['first_name'] }}" content="{{ user['first_name'] }}" name = "First Name">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput2">Last Name</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="{{ all_users[0]["last_name"] }}" content="{{ all_users[0]["last_name"] }}" name = "Last Name"> 
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="{{ user['last_name'] }}" content="{{ user['last_name'] }}" name = "Last Name"> 
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput">Email</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="{{{ all_users[0]["email"] }}" content="{{ all_users[0]["email"] }}" name = "Email">
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="{{ user['email'] }}" content="{{ user['email'] }}" name = "Email">
             </div>
             <input class="btn btn-primary" type="submit" value="Create" content="Create">
         </form>
+        {% endfor %}
 	<script></script>
 	</body>
 </html>

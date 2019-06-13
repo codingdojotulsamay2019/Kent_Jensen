@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 	</head>
 	<body>
+        {% for user in create %}
         <h1>Add a New User</h1>
         <a href="../users" content="Home">HOME</a>
         <form action="\create" method="POST">
@@ -17,14 +18,15 @@
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput2">Last Name</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Last Name" name = "Last Name"> 
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Last Name" name = "Last Name"> 
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput">Email</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Email" name = "Email">
             </div>
-            <input class="btn btn-primary" type="submit" value="Create" content="/show/{{user['id']}}">
+            <input class="btn btn-primary" type="submit" value="Create">
         </form>
+        {% endfor %}
 	<script></script>
 	</body>
 </html>

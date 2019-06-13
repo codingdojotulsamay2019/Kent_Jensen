@@ -3,23 +3,23 @@
     <head>
     <meta charset="UTF-8">
     <meta name="description" content="SHOW">
-    <title>User {{ user_idid }}</title>
+    <title>User Info</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 	</head>
 	<body>
-        <h1>User {{ user_id }}</h1>
         <a href="../users" content="Home">HOME</a>
-        {% for user in all_users %}
-        <p>Full Name: {{ user_id.first_name }} {{user_id.last_name}}</p>
-        <p>Email: {{user_id.email}}</p>
-        <p>Created On: {{user_id.created_at}}</p>
-        <p>Last Updated On: {{user_id.updated_at}}</p>
-        {% endfor %}
-        <td>
+        {% for user in user_id %}
+        <h1>User {{ user['id'] }}</h1>
+        <p>Full Name: {{ user['first_name'] }} {{user['last_name']}}</p>
+        <p>Email: {{user['email']}}</p>
+        <p>Created On: {{user['created_at']}}</p>
+        <p>Last Updated On: {{user['updated_at']}}</p>
         <div class="bottombar">
-            <a href url="/users/{{ user_id }}/edit" content="Edit"> Edit </a> | <a href url="/users/{{ user_id }}/destroy" content="Delete">Delete</a></td>
+            <a href="/users/{{ user['id'] }}/edit" content="Edit"> Edit </a> | <a href="/users/{{ user['id'] }}/destroy" content="Delete">Delete</a></td>
         </div>
+        {% endfor %}
+
             <script></script>
 	</body>
 </html>

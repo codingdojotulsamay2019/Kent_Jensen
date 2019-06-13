@@ -26,13 +26,13 @@
                     <td>{{ [user.first_name, user.last_name]|join(' ') }}</td>
                     <td>{{ user.email }}</td>
                     <td>{{ user.created_at }}</td>
-                    <td><a href url="/users/{{ user['id'] }}" content="Show">Show </a> | <a href url="/users/{{ user['id'] }}/edit" content="Edit"> Edit </a> | <a href url="/users/{{ user['id'] }}/destroy" content="Delete">Delete</a></td>
+                    <td><a href="/users/{{ user['id'] }}" content="Show">Show </a> | <a href="/users/{{ user['id'] }}/edit" content="Edit"> Edit </a> | <a href="/users/{{ user['id'] }}/destroy" content="Delete">Delete</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>
                 </table>
         </div>
-        <a href url="templates/create.html">Add a New User</a>
+        <a href="/users/new">Add a New User</a>
 	<script></script>
 	</body>
 </html>

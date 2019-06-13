@@ -34,14 +34,9 @@ def create():
 @app.route("/users/<user_id>")
 def show(user_id):
     mysql = connectToMySQL('users')
-    query = "SELECT * FROM users WHERE users.id = %(user_id)s;"
+    query = "SELECT * FROM users WHERE users.id = %(id)s;"
     data = {
-        "id" : user_id,
-        'fn' : user_id.first_name,
-        'ln' : user_id.last_name,
-        'em' : user_id.email,
-        'ca' : user_id.created_at,
-        'ua' : user_id.updated_at
+        "id" : user_id
     }
     show_user = mysql.query_db(query,data)
     return render_template('show.html', user_id = show_user)
@@ -55,11 +50,11 @@ def edit(user_id):
         'id' : user_id
     }
     edit_user = mysql.query_db(query,data)
-    return render_template('update.html', user_id=edit_user)
+    return render_template('update.html', user_id = edit_user)
 
 # /users/<id>/update - POST - method should update the specific user in the database, then redirect to /users/<id> 
 @app.route("/users/<user_id>/update", methods=["POST"]) #Actually pushes new user data to the server, avoid injection!
-def update():
+def update(user_id):
     mysql = connectToMySQL('users')
     query = "UPDATE users SET first_name = %(fn)s, last_name = %(ln)s, email = %(em)s WHERE id= user.id"
     data = {
@@ -69,7 +64,7 @@ def update():
         'id' : user_id
     }
     update = mysql.query_db (query,data)
-    return redirect('show.html')
+    return redirect('show.html', user_id=update)
 
 # /users/<id>/destroy - GET - method should delete the user with the specified id from the database, then redirect to /users
 @app.route("/users/<user_id>/destroy")
