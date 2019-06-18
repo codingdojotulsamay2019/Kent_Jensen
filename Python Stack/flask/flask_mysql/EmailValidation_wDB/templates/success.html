@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Success Page</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+	<body>
+        <a href="/">Go Back</a>
+                <!--jinja loop to populate table from db
+                display all the email addresses entered along with the date                 
+
+                and the time when the email addresses were entered. -->
+            <h1>Email Addresses Entered:</h1> <!-- needs underline -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                <h1 class=flashes></h1>
+                    {% for category, message in messages %}
+                        <p class="{{ category }}">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">Email: </th>
+                    <th scope="col">Created on: </th>
+                    <th scope="col">Delete User</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for each in checked_email %} 
+                    <tr>
+                        <td>{{ each['email'] }}</td>
+                        <td>{{ each['created_at'] }}</td>
+                        <td><a href="/delete/{{ each['id']}}" class="btn btn-dark">DELETE</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+	</body>
+</html>

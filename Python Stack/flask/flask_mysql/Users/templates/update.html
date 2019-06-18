@@ -9,23 +9,24 @@
 	</head>
 	<body>
         {% for user in user_id %}
-        <h1>Edit User {{user['user_id']}}</h1>
-        <a href="../../users" content="Home">HOME</a>
-        <form action="user/{{user[id]}}/update" method="POST">
+        <h1 class="main_edit"> Edit User {{user['id']}}</h1>
+        <a href="/users" class="home" content="Home">HOME</a>
+        <form class="mx-auto" action="/users/{{user['id']}}" method="POST">
             <div class="form-group">
                 <label for="formGroupExampleInput">First Name</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="{{ user['first_name'] }}" content="{{ user['first_name'] }}" name = "First Name">
+                <input type="text" class="form-control" id="formGroupExampleInput" value="{{ user['first_name'] }}" content="{{ user['first_name'] }}" name = "first_name">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput2">Last Name</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="{{ user['last_name'] }}" content="{{ user['last_name'] }}" name = "Last Name"> 
+                <input type="text" class="form-control" id="formGroupExampleInput" value="{{ user['last_name'] }}" content="{{ user['last_name'] }}" name = "last_name"> 
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput">Email</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="{{ user['email'] }}" content="{{ user['email'] }}" name = "Email">
+                <input type="text" class="form-control" id="formGroupExampleInput" value="{{ user['email'] }}" content="{{ user['email'] }}" name = "email">
             </div>
-            <input class="btn btn-primary" type="submit" value="Create" content="Create">
+            <input class="btn btn-primary" type="submit" value="Update" content="Update">
         </form>
+        <a href="/users/{{ user['id'] }}" class = show_user content="Show User">Show User </a>
         {% endfor %}
 	<script></script>
 	</body>

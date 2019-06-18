@@ -5,7 +5,7 @@
     <meta name="description" content="First Flask">
     <title>First Flask</title>
     <link rel="stylesheet" type="text/css" href="style\style.css">
-    </head>
+</head>
     <body>
         <h1>All My Friends</h1>
         {% for one_friend in all_friends %}
@@ -15,7 +15,14 @@
         <hr>
         {% endfor %}
         <h1>Add a Friend</h1>
-        <form action="/create_friend" method="POST">
+        {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+        {% if messages %}                            <!-- check if there are any messages -->
+            {% for message in messages %}            <!-- loop through the messages -->
+                <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <form action="/process" method="POST">
         <p>First Name: <input type="text" name="fname"></p>
         <p>Last Name: <input type="text" name="lname"></p>
         <p>Occupation: <input type="text" name="occ"></p>

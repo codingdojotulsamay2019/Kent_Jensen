@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Dojo Survey - Result</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <h1>Survey Result</h1>
+        <table class="table table-dark">
+            <thead>
+                {% for user in render %}
+              <tr>
+                <th scope="col">Full Name: </th>
+                <th scope="col">Location: </th>
+                <th scope="col">Favorite Language:  </th>
+                <th scope="col">Enjoy learning?  </th>
+                <th scope="col">Comments:  </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ user['first_name'] }} {{user['last_name']}}</td>
+                <td>{{ user['location'] }}</td>
+                <td>{{ user['fav_lang'] }}</td>
+                <td>{{ user['learning'] }}</td>
+                <td>{{ user['comment'] }}</td>
+            </tr>
+            </tbody>
+          </table>
+          {% endfor %}
+        <form action="/">
+        <input type="submit" class="btn btn-dark" value="Go Back" ></input>
+        </form>
+        <script></script>
+    </body>
+</html>

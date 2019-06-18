@@ -1,0 +1,88 @@
+QUERY 1
+SELECT SUM(billing.amount), billing.charged_datetime
+FROM billing
+WHERE billing.charged_datetime >= '2012/03/01' AND billing.charged_datetime < '2012/04/01';
+
+
+QUERY 2
+SELECT clients.client_id, SUM(billing.amount)
+FROM billing
+JOIN clients ON billing.client_id = clients.client_id
+WHERE clients.client_id = 2;
+
+
+QUERY 3
+SELECT sites.client_id, sites.domain_name
+FROM sites
+WHERE sites.client_id = 10;
+
+
+QUERY 4
+SELECT sites.client_id, COUNT(sites.domain_name), MONTHNAME(sites.created_datetime), YEAR(sites.created_datetime)
+FROM sites
+WHERE sites.client_id = 1
+GROUP BY YEAR(sites.created_datetime), MONTH(sites.created_datetime)
+ORDER BY YEAR(sites.created_datetime);
+
+SELECT sites.client_id, COUNT(sites.domain_name), MONTHNAME(sites.created_datetime), YEAR(sites.created_datetime)
+FROM sites
+WHERE sites.client_id = 20
+GROUP BY YEAR(sites.created_datetime), MONTH(sites.created_datetime)
+ORDER BY YEAR(sites.created_datetime);
+
+
+QUERY 5
+SELECT sites.domain_name, COUNT(leads.leads_id)
+FROM leads
+JOIN sites ON leads.site_id = sites.site_id
+WHERE leads.registered_datetime >= '2011-01-01'  AND leads.registered_datetime <= '2011-02-15'
+GROUP BY leads.site_id;
+
+
+QUERY 6
+SELECT clients.first_name, clients.last_name, COUNT(leads.leads_id)
+FROM clients
+JOIN sites ON clients.client_id = sites.client_id
+JOIN leads ON sites.site_id = leads.leads_id
+WHERE leads.registered_datetime >= '2011-01-01'  AND leads.registered_datetime <= '2011-12-31'
+GROUP BY clients.client_id;
+
+
+QUERY 7
+SELECT clients.first_name, clients.last_name, COUNT(leads.leads_id), MONTH(leads.registered_datetime)
+FROM clients
+JOIN sites ON clients.client_id = sites.client_id
+JOIN leads ON sites.site_id = leads.leads_id
+WHERE leads.registered_datetime >= '2011-01-01'  AND leads.registered_datetime <= '2011-6-30'
+GROUP BY clients.client_id;
+
+
+QUERY 8
+SELECT clients.first_name, clients.last_name, sites.domain_name, COUNT(leads.leads_id)
+FROM clients
+JOIN sites ON clients.client_id = sites.client_id
+JOIN leads ON sites.site_id = leads.leads_id
+WHERE leads.registered_datetime >= '2011-01-01'  AND leads.registered_datetime <= '2011-12-31'
+GROUP BY sites.domain_name
+ORDER BY clients.client_id;
+
+SELECT clients.first_name, clients.last_name, sites.domain_name, COUNT(leads.leads_id)
+FROM clients
+JOIN sites ON clients.client_id = sites.client_id
+JOIN leads ON sites.site_id = leads.leads_id
+GROUP BY sites.domain_name
+ORDER BY clients.client_id;
+
+
+QUERY 9
+SELECT clients.first_name, clients.last_name, SUM(billing.amount), MONTH(billing.charged_datetime)
+FROM billing
+JOIN clients ON billing.client_id = clients.client_id
+GROUP BY clients.client_id;
+
+
+QUERY 10
+SELECT clients.first_name, clients.last_name, GROUP_CONCAT(' ', sites.domain_name)
+FROM clients
+JOIN sites ON clients.client_id = sites.client_id
+GROUP BY clients.client_id;

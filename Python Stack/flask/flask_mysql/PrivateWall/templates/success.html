@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Private Wall</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div class="container-fluid">                
+            <h1 class="header">Private Wall </h1><h2 class="welcome">Welcome {{ session['user_name'] }}!</h2> 
+                <form action="/logout">
+                <input class="btn btn-dark" id="logout" type="submit" value="Log Out" name="logout"> <!-- needs to log user out (delete cookie) and redirect back to index.html through the same button.-->
+                </form>
+            <div class="read"><h5>{{ session['user_name'] }}, here are your messages:</h5>
+                <div class="row"></div>
+                {% for message in messages %}
+                {% if message['sender_id'] != session['userid'] %}
+                <h5 class="user_name"><strong>From: {{message['first_name'] }}</strong></h5>
+                <p class="time"> Sent : {{ message['created_at'] }}</p>
+                <p class="content"><strong>Message:</strong></p>
+                     <p>{{ message['content'] }}</p>
+                <div class="clickdelete">Click to delete message: </div><a href="/delete_message/{{message['id']}}" method="GET" name="delete_message"><img src="/static/img/delete.png" class="delete_icon" action="/delete_message/{{message['id']}}"></a>
+                <hr>
+                {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="send">
+
+            <form action="/send_message", method="POST">
+                {% for user in users %}
+                {% if user['id'] != session['userid'] %}
+                <h5 class="user_name">Send message to {{ user['first_name'] }}:</h5> <!-- Need jinja here for names and to loop boxes-->
+                <textarea class="form-control" name="content"></textarea>
+                <input type ="hidden" name="recip" value="{{user['id']}}">
+                <input class="btn btn-dark" id="sendbutton" type="submit" value="Send" name="send_message"></form>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>

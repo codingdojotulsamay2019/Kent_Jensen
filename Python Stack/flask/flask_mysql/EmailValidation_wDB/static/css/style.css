@@ -1,0 +1,10 @@
+* {
+    padding: 0px;
+    margin:0px;
+}
+.input.btn.btn-dark {
+    display:inline;
+}
+.td {
+    display:inline;
+}
