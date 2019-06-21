@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Leads and Clients</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <h1 class="header">Report Dashboard</h1>
+        <h2>List of all clients and # of leads</h2>
+        <table class="table table-hover table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Client Name</th>
+                    <th scope="col">Number of Leads</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for client in clients %}
+                    <tr>
+                        <td>{{ client['first_name'] }} {{ client['last_name'] }}</td>
+                        <td>{{ client['leadsbyclient'] }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+
+    <script>
+window.onload = function () {
+
+var options = {
+	title: {
+		text: "Clients and number of new leads"
+	},
+	animationEnabled: true,
+	data: [{
+		type: "pie",
+		startAngle: 0,
+		toolTipContent: "<b>{label}</b>: {y}",
+		showInLegend: "true",
+		legendText: "{label}",
+		indexLabelFontSize: 16,
+		indexLabel: "{label} - {y}",
+		dataPoints: [
+      {% for client in clients%}
+			{ y: {{ client['leadsbyclient'] }}, label: "{{ client['first_name'] }} {{ client['last_name'] }}"},
+      {% endfor %}
+		]
+	}]
+};
+$("#chartContainer").CanvasJSChart(options);
+
+}
+</script>
+</body>
+<div id="chartContainer" style="width: 100%; height: 300px;"></div>
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+</body>
+</html>

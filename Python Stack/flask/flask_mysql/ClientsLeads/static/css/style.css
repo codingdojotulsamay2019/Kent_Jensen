@@ -1,0 +1,12 @@
+table.table.table-hover.table-dark {
+    max-width:20%;
+    display:inline-block;
+}
+.thead {
+    width:50%;
+}
+.header {
+    background-color: #373D42;
+    color:white;
+    padding:5px;
+}
