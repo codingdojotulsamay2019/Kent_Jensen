@@ -44,7 +44,7 @@ var options = {
 		indexLabelFontSize: 16,
 		indexLabel: "{label} - {y}",
 		dataPoints: [
-      {% for client in clients%}
+      {% for client in clients %}
 			{ y: {{ client['leadsbyclient'] }}, label: "{{ client['first_name'] }} {{ client['last_name'] }}"},
       {% endfor %}
 		]
