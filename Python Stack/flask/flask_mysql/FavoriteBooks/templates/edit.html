@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Edit book</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+	<body>
+        <div class="container">
+            <div class="header"><h3> Hello {{ name[0]['first_name'] }}! Let's edit your book!</h3>
+                    <form class="logout_main" action="/logout"><input class="btn btn-primary" type="submit" value="Log Out" name="logout"></form>
+            </div>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <ul class=flashes>
+                        {% for category, message in messages %}
+                            <li class="{{ category }}">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+            <div class="display">
+                <div class="bookbox">
+                    <form action="/books/edit/{{bookid[0]['id']}}" method="POST">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Title: </label>
+                        <input name="title" type="text" class="form-control" id="exampleFormControlInput1" value="{{bookid[0]['title']}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Description: </label>
+                        <input name="description" type="text" class="form-control" id="exampleFormControlInput1" value="{{bookid[0]['description']}}">
+                    </div>
+                    <div class="botbutton">
+                        <input id="botsubbut" class="btn btn-primary" type="submit" value="Update book" name="Edit"></form><form id="cancel" action="/dashboard"><input id="cancel" class="btn btn-primary" type="submit" value="Cancel" name="cancel"></form>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</body>
+</html>

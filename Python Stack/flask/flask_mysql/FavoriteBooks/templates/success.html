@@ -7,21 +7,48 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     </head>
-	<body>
+    <body>
         <div class="container">
             <div class="header"> Welcome {{ name[0]['first_name'] }}
-            <h1>Books <form action="/logout"> <!-- tighten this up -->
-                <input class="btn btn-primary" type="submit" value="Log Out" name="logout"> <!-- needs to log user out (delete cookie) and redirect back to index.html through the same button.-->
-                </form></h1>
+                <h1>Books <form action="/logout">
+                    <input class="btn btn-primary" type="submit" value="Log Out" name="logout">
+                    </form>
+                </h1>
             </div>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <ul class=flashes>
+                        {% for category, message in messages %}
+                            <li class="{{ category }}">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
             <div class="addbook">
                 <!--Need to have form for title, desc, and submit button-->
                 <!-- book should be auto-added to user's favorites list-->
+                <form action="/books/new" method="POST">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Title</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter a title for your book" name="title">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Description</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter a description of the book" name="description">
+                    </div>                
+                    <button id="newsubmit" class="btn btn-primary" type="submit">Submit</button>
+                </form>
+                <form id="cancel" action="/dashboard"><input class="btn btn-primary" type="submit" value="Cancel" name="cancel"></form>
             </div>
             <div class="showbooks">
-                <!-- Jinja Loop to show books in db-->
+                <h3>All Books</h3>
+                    {% for book in books %}
+                        <li><a href="/show/{{book['id']}}"> {{ book['title'] }} </a></li>
+                        <li>(Added by: {{ book['user_id'] }})</li>
+                        <!-- need next line to be italics -->
+                        <li>{% if book['user_id'] == session['user_id'] %}this is one of your favorites{% endif %}</li>
+                    {% endfor %}
             </div>
-
         </div>
-	</body>
+    </body>
 </html>

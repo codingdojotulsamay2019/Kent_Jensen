@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>View Book</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+	<body>
+        <div class="container">
+            <div class="header"><h3>Welcome, {{ name[0]['first_name'] }}!</h3>
+                <div id="buttons">
+                    <form class="logout" id ="showlogout" action="/logout"><input class="btn btn-primary" type="submit" value="Log Out" name="logout"></form>
+                </div>
+            </div>
+            <div class="addbook">
+                <form class="title" name="title" type="text"></form>
+                <form class="description" name="description" type="textarea"></form>
+                <input type="sumbit" name="/addbook" method="POST" value="Add">
+            </div>
+            <div class="display">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <ul class=flashes>
+                            {% for category, message in messages %}
+                                <li class="{{ category }}">{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+                <h4>{{bookid[0]['title']}}</h4>
+                <div class="bookbox">
+                    <p>Description: {{bookid[0]['description']}}</p>
+                    <p>Location: {{bookid[0]['location']}}</p>
+                    <p>Posted by: {{created_by[0]['first_name']}}</p>
+                    <p>Posted On: {{bookid[0]['created_at']}}</p>
+                </div>
+            </div>
+
+        </div>
+	</body>
+</html>
