@@ -145,7 +145,7 @@ def success():
     firstname = mysql.query_db(query, data)
     print(firstname)
     mysql = connectToMySQL('FavoriteBooks')
-    allbooks=mysql.query_db("SELECT id, creator, title FROM books")
+    allbooks=mysql.query_db("SELECT id, title, title FROM books")
     return render_template("success.html", name=firstname, books=allbooks)
 
 @app.route('/books/new', methods=['POST'])
@@ -175,9 +175,13 @@ def add_book():
         }
         add=mysql.query_db(query, data)
         mysql = connectToMySQL('FavoriteBooks')
-        query = "INSERT INTO favorites (book_id, user_id);"
+
+        book_id= mysql.query_db("SELECT id FROM books WHERE ")
+        mysql = connectToMySQL('FavoriteBooks')
+        query = "INSERT INTO favorites (book_id, user_id) VALUES (%(bid), %(uid)s) WHERE bookid = %(bid);"
         data = {
-            '' : asdf
+            'bid' : book_id
+            'uid' : session['user_id']
         }
         addToFavorites=mysql.query_db(query,data)
         print(session['user_id'])
