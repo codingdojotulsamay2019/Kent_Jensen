@@ -7,8 +7,6 @@ namespace Big13
     {
         static void Main(string[] args)
         {
-            int[] arr= {1, 2 ,3, 4, 5, 6, -7, -8, 9, 10};
-            Console.WriteLine("Hello World!");
             print1to255();
             printIntsAndSum();
             printMaxOfArray();
@@ -101,7 +99,8 @@ namespace Big13
             }
             Console.WriteLine(max);
             Console.WriteLine(min);
-            Console.WriteLine(sum/arr.Length);
+            float avg = sum/arr.length;
+            Console.WriteLine(avg);
         }
 
         static void swapNegsInArray(int[] arr)
@@ -146,7 +145,8 @@ namespace Big13
             {
                 sum += arr[i];
             }
-            Console.WriteLine(sum/arr.Length);
+            float avg = sum/arr.Length;
+            Console.WriteLine(avg);
         }
 
         static void squareArr(int[] arr)
