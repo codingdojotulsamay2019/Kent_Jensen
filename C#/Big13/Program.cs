@@ -5,15 +5,15 @@ namespace Big13
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             int[] arr = { 1, 2, 3, 4, 5, -1, -2, -3, -4, -5};
             print1to255();
             printIntsAndSum();
-            printMaxOfArray(arr);
-            returnOddsArray1To255(arr);
-            returnArrayCountGreaterThanY(arr, 3);
-            printMaxMinAvgArrayVals(arr);
+            FindMax(arr);
+            OddArray();
+            GreaterThanY(arr, 3);
+            MinMaxAverage(arr);
             swapNegsInArray(arr);
             printOdds1to255();
             printArr(arr);
@@ -23,7 +23,7 @@ namespace Big13
             shiftLeft(arr);
         }
 
-        static void print1to255()
+        public static void print1to255()
         {
             for (int i=1; i < 256; i++)
             {
@@ -31,7 +31,7 @@ namespace Big13
             }
         }
 
-        static void printIntsAndSum()
+        public static void printIntsAndSum()
         {
             int sum = 0;
             for (int i=0; i < 256; i++)
@@ -42,19 +42,20 @@ namespace Big13
             }
         }
 
-        static void printMaxOfArray(int[] arr)
+        public static int FindMax(int[] arr)
         {
             int high = arr[0];
-            for(int i = 0; i<arr.Length;i++)
+            for(int i = 1; i<arr.Length;i++)
             {
                 if(arr[i] > high)
                 {
                     high = arr[i];
                 }
             }
+            return high;
         }
 
-        static void returnOddsArray1To255(int[] arr)
+        public static int[] OddArray()
         {
             int[] NewArr = new int[256/2];
             int indexpos = 0;
@@ -66,9 +67,10 @@ namespace Big13
                     indexpos ++;
                 }
             }
+            return NewArr;
         }
 
-        static void returnArrayCountGreaterThanY(int[] arr, int y)
+        static void GreaterThanY(int[] arr, int y)
         {
             int count = 0;
             for (int i = 0; i <arr.Length; i++)
@@ -81,7 +83,7 @@ namespace Big13
             Console.WriteLine(count);
         }
 
-        static void printMaxMinAvgArrayVals(int[] arr)
+        static void MinMaxAverage(int[] arr)
         {
             int max = arr[0];
             int min = arr[0];
