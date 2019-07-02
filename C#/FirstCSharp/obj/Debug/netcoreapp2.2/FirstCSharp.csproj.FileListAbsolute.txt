@@ -1,0 +1,11 @@
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\FirstCSharp\bin\Debug\netcoreapp2.2\FirstCSharp.deps.json
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\FirstCSharp\bin\Debug\netcoreapp2.2\FirstCSharp.runtimeconfig.json
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\FirstCSharp\bin\Debug\netcoreapp2.2\FirstCSharp.runtimeconfig.dev.json
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\FirstCSharp\bin\Debug\netcoreapp2.2\FirstCSharp.dll
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\FirstCSharp\bin\Debug\netcoreapp2.2\FirstCSharp.pdb
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\FirstCSharp\obj\Debug\netcoreapp2.2\FirstCSharp.csprojAssemblyReference.cache
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\FirstCSharp\obj\Debug\netcoreapp2.2\FirstCSharp.csproj.CoreCompileInputs.cache
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\FirstCSharp\obj\Debug\netcoreapp2.2\FirstCSharp.AssemblyInfoInputs.cache
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\FirstCSharp\obj\Debug\netcoreapp2.2\FirstCSharp.AssemblyInfo.cs
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\FirstCSharp\obj\Debug\netcoreapp2.2\FirstCSharp.dll
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\FirstCSharp\obj\Debug\netcoreapp2.2\FirstCSharp.pdb

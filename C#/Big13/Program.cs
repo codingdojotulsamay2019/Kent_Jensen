@@ -7,19 +7,20 @@ namespace Big13
     {
         static void Main(string[] args)
         {
+            int[] arr = { 1, 2, 3, 4, 5, -1, -2, -3, -4, -5};
             print1to255();
             printIntsAndSum();
-            printMaxOfArray();
-            returnOddsArray1To255();
-            returnArrayCountGreaterThanY();
-            printMaxMinAvgArrayVals();
-            swapNegsInArray();
+            printMaxOfArray(arr);
+            returnOddsArray1To255(arr);
+            returnArrayCountGreaterThanY(arr, 3);
+            printMaxMinAvgArrayVals(arr);
+            swapNegsInArray(arr);
             printOdds1to255();
-            printArr();
-            printAvgArray();
-            squareArr();
-            zeroNegsInArray();
-            shiftLeft();
+            printArr(arr);
+            printAvgArray(arr);
+            squareArr(arr);
+            zeroNegsInArray(arr);
+            shiftLeft(arr);
         }
 
         static void print1to255()
@@ -44,7 +45,7 @@ namespace Big13
         static void printMaxOfArray(int[] arr)
         {
             int high = arr[0];
-            foreach (int i in arr)
+            for(int i = 0; i<arr.Length;i++)
             {
                 if(arr[i] > high)
                 {
@@ -53,15 +54,15 @@ namespace Big13
             }
         }
 
-        static void returnOddsArray1To255()
+        static void returnOddsArray1To255(int[] arr)
         {
-            int[] arr = new int[256/2];
+            int[] NewArr = new int[256/2];
             int indexpos = 0;
             for (int i = 1; i < 256; i++)
             {
                 if (i % 2 == 1)
                 {
-                    arr[indexpos] = i;
+                    NewArr[indexpos] = i;
                     indexpos ++;
                 }
             }
@@ -70,11 +71,11 @@ namespace Big13
         static void returnArrayCountGreaterThanY(int[] arr, int y)
         {
             int count = 0;
-            foreach (int i in arr)
+            for (int i = 0; i <arr.Length; i++)
             {
                 if (arr[i] > y)
                 {
-                    count ++;
+                count++;
                 }
             }
             Console.WriteLine(count);
@@ -85,7 +86,7 @@ namespace Big13
             int max = arr[0];
             int min = arr[0];
             int sum = 0;
-            foreach (int i in arr)
+            for (int i = 0; i < arr.Length; i++)
             {
                 if (max < arr[i])
                 {
@@ -99,14 +100,14 @@ namespace Big13
             }
             Console.WriteLine(max);
             Console.WriteLine(min);
-            float avg = sum/arr.length;
+            float avg = sum/arr.Length;
             Console.WriteLine(avg);
         }
 
         static void swapNegsInArray(int[] arr)
         {
              List<string> noNegs = new List<string>();
-             foreach (int i in arr)
+             for (int i = 0; i < arr.Length; i++)
              {
                  if (arr[i] < 0)
                  {
@@ -141,7 +142,7 @@ namespace Big13
         static void printAvgArray(int[] arr)
         {
             int sum = 0;
-            foreach (int i in arr)
+            for(int i = 0; i< arr.Length; i++)
             {
                 sum += arr[i];
             }
@@ -151,15 +152,15 @@ namespace Big13
 
         static void squareArr(int[] arr)
         {
-            foreach (int i in arr)
+            for(int i =0; i < arr.Length; i++)
             {
-                arr[i] = arr[i] * arr[i];
+                arr[i] *= arr[i];
             }
         }
 
         static void zeroNegsInArray(int[] arr)
         {
-             foreach (int i in arr)
+             for(int i = 0; i < arr.Length; i++)
              {
                  if (arr[i] < 0)
                  {

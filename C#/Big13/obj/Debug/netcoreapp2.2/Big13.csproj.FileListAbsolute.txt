@@ -1,0 +1,11 @@
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Big13\obj\Debug\netcoreapp2.2\Big13.csprojAssemblyReference.cache
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Big13\obj\Debug\netcoreapp2.2\Big13.csproj.CoreCompileInputs.cache
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Big13\obj\Debug\netcoreapp2.2\Big13.AssemblyInfoInputs.cache
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Big13\obj\Debug\netcoreapp2.2\Big13.AssemblyInfo.cs
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Big13\bin\Debug\netcoreapp2.2\Big13.deps.json
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Big13\bin\Debug\netcoreapp2.2\Big13.runtimeconfig.json
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Big13\bin\Debug\netcoreapp2.2\Big13.runtimeconfig.dev.json
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Big13\bin\Debug\netcoreapp2.2\Big13.dll
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Big13\bin\Debug\netcoreapp2.2\Big13.pdb
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Big13\obj\Debug\netcoreapp2.2\Big13.dll
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Big13\obj\Debug\netcoreapp2.2\Big13.pdb
