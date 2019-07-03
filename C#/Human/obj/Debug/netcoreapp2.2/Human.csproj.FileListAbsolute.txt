@@ -1,0 +1,11 @@
+C:\users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Human\obj\Debug\netcoreapp2.2\Human.csprojAssemblyReference.cache
+C:\users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Human\obj\Debug\netcoreapp2.2\Human.csproj.CoreCompileInputs.cache
+C:\users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Human\obj\Debug\netcoreapp2.2\Human.AssemblyInfoInputs.cache
+C:\users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Human\obj\Debug\netcoreapp2.2\Human.AssemblyInfo.cs
+C:\users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Human\bin\Debug\netcoreapp2.2\Human.deps.json
+C:\users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Human\bin\Debug\netcoreapp2.2\Human.runtimeconfig.json
+C:\users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Human\bin\Debug\netcoreapp2.2\Human.runtimeconfig.dev.json
+C:\users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Human\bin\Debug\netcoreapp2.2\Human.dll
+C:\users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Human\bin\Debug\netcoreapp2.2\Human.pdb
+C:\users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Human\obj\Debug\netcoreapp2.2\Human.dll
+C:\users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Human\obj\Debug\netcoreapp2.2\Human.pdb
