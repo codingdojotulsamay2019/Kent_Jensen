@@ -1,0 +1,11 @@
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\HungryNinja\bin\Debug\netcoreapp2.2\HungryNinja.deps.json
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\HungryNinja\bin\Debug\netcoreapp2.2\HungryNinja.runtimeconfig.json
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\HungryNinja\bin\Debug\netcoreapp2.2\HungryNinja.runtimeconfig.dev.json
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\HungryNinja\bin\Debug\netcoreapp2.2\HungryNinja.dll
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\HungryNinja\bin\Debug\netcoreapp2.2\HungryNinja.pdb
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\HungryNinja\obj\Debug\netcoreapp2.2\HungryNinja.csprojAssemblyReference.cache
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\HungryNinja\obj\Debug\netcoreapp2.2\HungryNinja.csproj.CoreCompileInputs.cache
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\HungryNinja\obj\Debug\netcoreapp2.2\HungryNinja.AssemblyInfoInputs.cache
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\HungryNinja\obj\Debug\netcoreapp2.2\HungryNinja.AssemblyInfo.cs
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\HungryNinja\obj\Debug\netcoreapp2.2\HungryNinja.dll
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\HungryNinja\obj\Debug\netcoreapp2.2\HungryNinja.pdb
