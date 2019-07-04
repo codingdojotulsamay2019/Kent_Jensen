@@ -5,7 +5,16 @@ namespace HungryNinja
     class Program
     {
         static void Main(string[] args)
-        {}
+        {
+            Buffet Shoneys = new Buffet();
+            Ninja Jimbob = new Ninja();
+            while(Jimbob.IsFull == false)
+            {
+                Jimbob.Eat(Shoneys.Serve());
+            }
+
+
+        }
         class Food
         {
 
@@ -41,7 +50,7 @@ namespace HungryNinja
                     new Food("Fries", 750, false, false)
                 };
             }
-
+        
             public Food Serve()
             //build out Serve to randomly select a Food object from Menu and returns that object.
             {
@@ -50,6 +59,7 @@ namespace HungryNinja
                 Food target = Menu[generate];
                 return target;
             }
+        }
         class Ninja
         {
             private int calorieIntake;
@@ -86,20 +96,23 @@ namespace HungryNinja
 
             public void Eat(Food item)
             {
+                System.Console.WriteLine($"The Ninja's calorie count is: {calorieIntake}");
                 if(calorieIntake > 1200)
                 {
                     System.Console.WriteLine("Ninja is stuffed. He can't even eat a wafer thin mint.");
                 }
                 else
                 {
+                    System.Console.WriteLine($"The ninja is still hungry. He's going to grab a {item.Name}");
                     FoodHistory.Add(item);
                     calorieIntake+= item.Calories;
+                    System.Console.WriteLine($"The food had {item.Calories} calories.");
                 }
             }
         }
         
-        }
     }
 }
+
 
 
