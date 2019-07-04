@@ -1,0 +1,11 @@
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\DeckOfCards\bin\Debug\netcoreapp2.2\DeckOfCards.deps.json
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\DeckOfCards\bin\Debug\netcoreapp2.2\DeckOfCards.runtimeconfig.json
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\DeckOfCards\bin\Debug\netcoreapp2.2\DeckOfCards.runtimeconfig.dev.json
+c:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\DeckOfCards\bin\Debug\netcoreapp2.2\DeckOfCards.dll
+c:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\DeckOfCards\bin\Debug\netcoreapp2.2\DeckOfCards.pdb
+c:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\DeckOfCards\obj\Debug\netcoreapp2.2\DeckOfCards.csprojAssemblyReference.cache
+c:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\DeckOfCards\obj\Debug\netcoreapp2.2\DeckOfCards.csproj.CoreCompileInputs.cache
+c:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\DeckOfCards\obj\Debug\netcoreapp2.2\DeckOfCards.AssemblyInfoInputs.cache
+c:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\DeckOfCards\obj\Debug\netcoreapp2.2\DeckOfCards.AssemblyInfo.cs
+c:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\DeckOfCards\obj\Debug\netcoreapp2.2\DeckOfCards.dll
+c:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\DeckOfCards\obj\Debug\netcoreapp2.2\DeckOfCards.pdb
