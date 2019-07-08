@@ -5,23 +5,25 @@ namespace WizardNinjaSamurai
 {
     class Wizard : Human
         {
-            public override Wizard()
+            public Wizard(string Name) : base(Name)
             {
-                int health = 50;
-                int intel = 25;
-                
-                public int Attack(Human target)
-                {
-                    int dmg = (5*intel);
-                    target.health -= dmg;
-                    health += dmg;
-                    Console.WriteLine($"{Name} attacked {target.Name} for {dmg} damage!");
-
-                }
-                public int Heal(Human target)
-                {
-                    target.Health += (10 * intel);
-                }
+                Health = 50;
+                Intelligence = 25;
+            }
+            public Wizard(string name, int str, int intel, int dex, int hp) : base(name, str, intel, dex, hp)
+            {
+            }
+            public override int Attack(Human target)
+            {
+                int dmg = (5*Intelligence);
+                target.Health -= dmg;
+                health += dmg;
+                Console.WriteLine($"{Name} attacked {target.Name} for {dmg} damage!");
+                return target.Health;
+            }
+            public void Heal(Human target)
+            {
+                target.Health += (10 * Intelligence);
             }
         }
         //Wizard should have a default health of 50 and Intelligence of 25 

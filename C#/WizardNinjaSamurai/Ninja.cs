@@ -3,26 +3,32 @@ using System.Collections.Generic;
 
 namespace WizardNinjaSamurai
 {
-    class Ninja
+    class Ninja : Human
     {
-        public int Dexterity = 175;
-        public override Attack(Human target)
+        public Ninja(string Name) : base(Name)
         {
-            int dmg = (Dexterity*5)
-            target.health -= dmg;
+            Dexterity = 175;
+        }
+        public Ninja(string name, int str, int intel, int dex, int hp) : base(name, str, intel, dex, hp)
+        {
+        }
+        public override int Attack(Human target)
+        {
+            int dmg = (Dexterity*5);
+            target.Health -= dmg;
             Random rand = new Random();
-            if(rand = 0)
+            if(rand.Next(0,5) == 0)
             {
-                target.health -= 10;
+                target.Health -= 10;
                 Console.WriteLine($"{Name} got 10 extra damage on {target.Name}!");
 
             }
             Console.WriteLine($"{Name} attacked {target.Name} for {dmg} damage!");
-
+            return target.Health;
         }
-        public Steal(Human target)
+        public void Steal(Human target)
         {
-            target.health -= 5;
+            target.Health -= 5;
             Health += 5;
         }
         //Ninja should have a default dexterity of 175
