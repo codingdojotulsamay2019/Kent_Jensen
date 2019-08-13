@@ -12,12 +12,9 @@ namespace HungryNinja
             {
                 Jimbob.Eat(Shoneys.Serve());
             }
-
-
         }
         class Food
         {
-
             public string Name;
             public int Calories;
             // Foods can be Spicy and/or Sweet

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Index Page Here</h1>
+    <h2>Nothing to see here, move along.</h2>
+    <form action="/" method="POST">
+        Name:<input type="text" name="name"><br>
+        Message:<input type="text" name="content">
+        <button type="submit">Post Message</button>
+    </form>
+    <h3>Messages should load here through EJS</h3>
+        <% for (var e in message) { %>
+        <h3>Name: <%= message[e].name %></h3>
+        <h4>Message: <%= message[e].content %></h4>
+            <h4>Comments: </h4>
+            <% for (var c in message[e].comment) { %>
+            <h5><%= message[e].comment[c].name %></h5>
+            <h5><%= message[e].comment[c].content %></h5>
+            <% } %>
+            <form action="/comment">
+            Name:<input type="text" name="name"><br>
+            Comment:<input type="text" name="comment">
+            <button type="submit">Post Comment</button>
+        </form>
+        <% } %>
+    
+</body>
+</html>
