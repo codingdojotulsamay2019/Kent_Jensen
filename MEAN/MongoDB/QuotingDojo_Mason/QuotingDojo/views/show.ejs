@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/CSS/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="display-3 text-center">Here are the awesome quotes!</h1>
+        <ul class="list-unstyled">
+            <% for(let q in quotes) { %>
+            <li>"<%=  quotes[q].quote %>"</li>
+            <ul>
+                <li class="list-unstyled">-<%= quotes[q].name %> on <%= quotes[q].createdAt.toDateString() %></li>
+            </ul>
+            <% } %>
+        </ul>
+        <a href="/" class="btn btn-primary">Add A Quote!</a>
+    </div>
+</body>
+
+</html>

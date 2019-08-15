@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- FULL DISCLOSURE: I did not write the base code for this assignment,
+// but I did complete the modularization on my own.
+// I am a little behind, and in order to try to keep up and complete more advanced assignments like I was asked, 
+// I didn't complete Quoting Dojo. Mason gifted me this code of his own volition and without my asking
+// to be able to modularize this assignment to make progress forward. Again, I take no credit for the base code.
+-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/CSS/bootstrap.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-4 text-center">Welcome to Quoting Dojo</h1>
+        <% if(messages.name) { %>
+            <% for (var x of messages.name) { %>
+                <p class="text-danger"><%= x %></p>
+        <% } %>
+        <% } %>
+    <form class="form-group" action="/quotes" method="post">
+        <label for="name">Your Name:</label>
+        <input name="name" id="name" type="text" class="form-control">
+        <label for="quote">Your Quote:</label>
+        <textarea name="quote" id="quote" cols="30" rows="3" class="form-control mb-3"></textarea>
+        <button class="btn btn-primary type="submit">Add my quote!</button>
+        <a class='btn btn-secondary' href="/quotes">Skip to quotes!</a>
+    </form>
+</div>
+</body>
+</html>

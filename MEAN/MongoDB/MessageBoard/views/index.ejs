@@ -9,12 +9,17 @@
 <body>
     <h1>Index Page Here</h1>
     <h2>Nothing to see here, move along.</h2>
+    <% JSON.stringify(messages) %> 
+        <% if(messages.errors) { %>
+            <% for (var x of messages.errors) { %>
+            <h3><%= x %></h3>
+        <% } %>
+    <% } %>
     <form action="/" method="POST">
         Name:<input type="text" name="name"><br>
         Message:<input type="text" name="content">
         <button type="submit">Post Message</button>
     </form>
-    <h3>Messages should load here through EJS</h3>
         <% for (var e of message) { %>
         <h3>Name: <%= e.name %></h3>
         <h4>Message: <%= e.content %></h4>

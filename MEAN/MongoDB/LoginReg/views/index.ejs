@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Login and Registration</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Login and Registration</h1>
+            <ul>
+            <!--Need to fix error posting to EJS-->
+            <% JSON.stringify(messages) %> 
+                <% if(messages.errors) { %>
+                    <% for (var x of messages.errors) { %>
+                    <li><%= x %></li>
+                <% } %>
+            <% } %>
+                </ul>
+            <div class='register'> <h2>Register</h2>
+                <form action="/register" method="POST">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">First Name:</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="First Name" name = "first_name">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Last Name:</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Last Name" name = "last_name"> 
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Email:</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Email" name = "email">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Password:</label>
+                    <input type="password" class="form-control" id="formGroupExampleInput" placeholder="Password" name = "password">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Birthday:</label>
+                    <input type="date" class="form-control" id="formGroupExampleInput" name = "birthday">
+                </div>
+                <input class="btn btn-primary" type="submit" value="Register">
+                </form>
+            </div>
+            <div class='login'> <h2>Login</h2>
+                <form action="/login" method="POST">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Email:</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Email" name = "email_login">
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Password:</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Password" name = "password_login">
+                    </div>
+                        <input class="btn btn-primary" type="submit" value="Login">
+                    </div>
+        </div>
+    </body>
+</html>

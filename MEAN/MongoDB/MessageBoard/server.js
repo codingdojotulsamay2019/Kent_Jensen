@@ -1,15 +1,8 @@
 const express = require("express");
 const mongoose = require('mongoose');
 const app = express();
-const flash = require('express-flash');
 const session = require('express-session');
-app.use(flash());
-app.use(session({
-    secret: 'keyboardkitteh',
-    resave: false,
-    saveUninitialized: true,
-    cookie: { maxAge: 60000 }
-    }))
+const flash = require('express-flash');
 mongoose.connect('mongodb://localhost/MessageBoard', {useNewUrlParser: true});
 
 const CommentSchema = new mongoose.Schema({
@@ -26,18 +19,21 @@ const Comment = mongoose.model('Comment', CommentSchema);
 const Message = mongoose.model('Message', MessageSchema);
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/static"));
+app.use(flash());
+app.use(session({
+    secret: 'keyboardkitteh',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 60000 }
+    }))
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
-app.get('/', (req, res) => {  
+app.get('/', (req, res) => {
     Message.find()
-        .then(data => {
-            console.log(data)
-            res.render("index", {message: data})})
-        .catch(err => {
-            for (var key in err.errors) {
-            req.flash('registration', err.errors[key].message);
-        }
-    })
+    .then(data => {
+        console.log(data)
+        res.render("index", {message: data})})
+    .catch(err => res.render('message', {err: err}))
 })
 app.post('/', (req, res) => {
     console.log("POSTING MESSAGE")
@@ -45,14 +41,19 @@ app.post('/', (req, res) => {
     message.name = req.body.name;
     message.content = req.body.content;
     message.save()
-        .then(newMessageData => console.log('message created: ', newMessageData))
-        .catch(err => {
-            for (var key in err.errors) {
-                req.flash('registration', err.errors[key].message);
-            }
-            res.redirect('/');
+        .then(newMessageData => {
+            console.log('message created: ', newMessageData)
+            res.redirect('/')
         })
-})
+        .catch(err => {
+            console.log("We have an error!", err)
+            // adjust the code below as needed to create a flash message with the tag and content you would like
+            for (var key in err.errors) {
+                req.flash('errors', err.errors[key].message)
+            }
+            res.redirect('/')
+        })
+
 
 // THIS DOES THE SAME THING AS THE ONE ABOVE!
 // app.post('/', (req, res) => {
@@ -73,12 +74,13 @@ app.post('/comment/:id', (req,res) => {
                 $push: {comments: newCommentData}
             })
         .catch(err => {
+            console.log("We have an error!", err);
             for (var key in err.errors) {
-                req.flash('registration', err.errors[key].message);
+                req.flash('errors', err.errors[key].message);
             }
         })
-        .finally(() => res.redirect('/'))
-    })
+        .finally(()=> res.redirect('/'))
+        })
 })
-
+})
 app.listen(8000, () => console.log("listening on port 8000"));
