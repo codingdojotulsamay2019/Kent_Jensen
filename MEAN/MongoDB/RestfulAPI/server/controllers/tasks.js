@@ -4,22 +4,19 @@ const mongoose = require('mongoose'),
 Task = mongoose.model('Task')
 module.exports = {
     // GET /quotes
-    Home : (req, res) => {
-        res.redirect('/tasks')
-    },
-    Index : (req, res) => {
-    console.log("getting tasks")
-    Task.find()
-        .then(allTasks => {
-            console.log("success!");
-            console.log(allTasks)
-            res.json({tasks: allTasks})
-        })
-        .catch(err => {
-            console.log("******* error:")
-            console.log(err);
-            res.json({err: err})
-        })
+    Show : (req, res) => {
+        console.log("getting tasks")
+        Task.find()
+            .then(allTasks => {
+                console.log("success!");
+                console.log(allTasks)
+                res.json({tasks: allTasks})
+            })
+            .catch(err => {
+                console.log("******* error:")
+                console.log(err);
+                res.json({err: err})
+            })
     },
     New : (req,res) => {
         console.log(req.body)
