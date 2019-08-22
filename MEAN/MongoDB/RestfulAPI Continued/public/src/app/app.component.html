@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center" *ngIf="loggedIn">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<div *ngIf="loggedIn">
+<h2>Here are all of the tasks: </h2>
+<ul *ngFor="let task of tasks">
+  <li> {{task.title}} : {{task.description}}</li>
+</ul>
+<h2>Here is the second task in the list:</h2>
+<input type="submit" [value]="tasks[1].title"> : {{tasks[1].description}}
+</div>

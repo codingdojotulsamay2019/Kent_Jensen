@@ -31,16 +31,9 @@ module.exports = {
             )
     },
     GetID : (req,res) => {
-        const {id} = req.params;
-        console.log("Getting task ID: "+ id);
-        Task.find({_id:id})
-            .then(success => {
-                console.log("retrieved data by ID")
-                res.json({task:success})
-            })
-            .catch(err => {
-                res.json({task:err});
-            })
+        console.log("Getting task ID: "+ _id);
+        Task.findByID(id)
+        res.json({task:data})
     },
     Update: (req,res) => {
         console.log(req.body)

@@ -1,14 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center" *ngIf="loggedIn">
+<div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
 </div>
-<div *ngIf="loggedIn">
-<h2>Here are all of the tasks: </h2>
+<div>
+  <input type="submit" value="Get All Tasks" (click)="getTasksFromService()">
+<h2 *ngIf="dataIn">Here are all of the tasks: 
 <ul *ngFor="let task of tasks">
-  <li> {{task.title}} : {{task.description}}</li>
+  <li> {{task.title}} <button value="Show Info" (click)="displayData(task._id)">Get Info</button></li>
 </ul>
-<h2>Here is the second task in the list:</h2>
-<input type="submit" [value]="tasks[1].title"> : {{tasks[1].description}}
+<p *ngIf="showData">{{task1[0].title}} - {{task1[0].description}}</p> 
+</h2>
 </div>

@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class HttpService {
   constructor(private _http: HttpClient){
    }
-   getTasks() {
+   getTasks(){
       return this._http.get('/tasks');
    }
    getTaskByID(){
@@ -22,8 +22,5 @@ export class HttpService {
    }
    deleteTask(){
       return this._http.delete('/task/:id');
-   }
-   displayData(id){
-      return this._http.get(`/task/${id}`);
    }
 }

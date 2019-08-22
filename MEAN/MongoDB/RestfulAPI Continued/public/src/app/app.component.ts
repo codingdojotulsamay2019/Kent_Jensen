@@ -7,13 +7,11 @@ import { HttpService } from './http.service';
 })
 export class AppComponent implements OnInit {
   title = 'Restful Tasks API';
-  dataIn: boolean;
-  showData: boolean = false;
+  loggedIn: boolean;
   tasks = [];
-  task1 = [];
   constructor(private _httpService: HttpService){}
   ngOnInit(){
-    // this.getTasksFromService()
+    this.getTasksFromService()
   };
   getTasksFromService(){
     let tempObservable = this._httpService.getTasks();
@@ -21,7 +19,7 @@ export class AppComponent implements OnInit {
       console.log("Got our tasks!", data)
       this.tasks = data["tasks"];
       console.log(this.tasks);
-      this.dataIn = true;
+      this.loggedIn = true;
     } )
   }
   getTaskByIDFromService(){
@@ -49,14 +47,6 @@ export class AppComponent implements OnInit {
       console.log("Deleting task");
     })
   }
-  displayData(id:string){
-    let tempObservable = this._httpService.displayData(id);
-    tempObservable.subscribe(data=>{
-      console.log("Displaying data");
-      this.showData=true;
-      console.log(data);
-      this.task1 = data["task"];
-      console.log(this.task1);
-    })
-  }
 }
+
+
