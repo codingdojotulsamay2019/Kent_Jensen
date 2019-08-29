@@ -5,11 +5,30 @@
   </h1>
 </div>
 <div>
+  <form (submit)="onSubmit()">
+    <!-- use the json pipe to see how newTask changes in real time -->
+    <p> {{ newTask | json }} </p>
+    <input type="text" placeholder="Task Title" name="newTask.title" [(ngModel)]="newTask.title" />
+    <input type="text" placeholder="Task Description" name="newTask.description" [(ngModel)]="newTask.description" />
+    <input type="submit" value="Create Task" />
+  </form>
+</div>
+<div>
   <input type="submit" value="Get All Tasks" (click)="getTasksFromService()">
 <h2 *ngIf="dataIn">Here are all of the tasks: 
 <ul *ngFor="let task of tasks">
-  <li> {{task.title}} <button value="Show Info" (click)="displayData(task._id)">Get Info</button></li>
+  <li> {{task.title}} <button value="Show Info" (click)="displayData(task.id)">Get Info</button><button value="Edit" (click)="updateTaskFromService(data)">Update Task</button><button value="Delete" (click)="deleteTaskFromService(task._id)">Delete</button></li>
 </ul>
 <p *ngIf="showData">{{task1[0].title}} - {{task1[0].description}}</p> 
+<div class="updateform" *ngIf="showForm">
+  <form (submit) = "updateTaskFromService(data)">
+    Title: <input type="text" placeholder="{{task1[0].title}}">
+    Description: <input type="text" placeholder="{{task1[0].description}}">
+    <button type="submit">Update Task</button>
+  </form>
+</div> 
+
 </h2>
 </div>
+
+

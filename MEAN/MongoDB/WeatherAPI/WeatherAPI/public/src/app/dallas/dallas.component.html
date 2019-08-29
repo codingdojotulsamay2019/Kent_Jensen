@@ -1,0 +1,7 @@
+<h1>Dallas, TX</h1>
+<img src="https://images.pexels.com/photos/280193/pexels-photo-280193.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+<p>Humidity: {{dallas.main.humidity}} %</p>
+<p>Temperature(avg): {{convertToF(dallas.main.temp)}} &deg;F </p>
+<p>Temperature(high): {{convertToF(dallas.main.temp_max)}} &deg;F</p>
+<p>Temperature(low): {{convertToF(dallas.main.temp_min)}} &deg;F</p>
+<p>Status: {{dallas.weather[0].description}}</p>

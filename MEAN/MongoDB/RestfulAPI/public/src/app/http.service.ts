@@ -14,16 +14,16 @@ export class HttpService {
    getTaskByID(){
       return this._http.get('/task/:id');
    }
-   createTask(data){
-      return this._http.post('/task/new', data);
+   updateTask(id, data){
+      return this._http.put(`/task/${id}`, data);
    }
-   updateTask(data){
-      return this._http.put('/task/:id', data);
-   }
-   deleteTask(){
-      return this._http.delete('/task/:id');
+   deleteTask(id){
+      return this._http.delete(`/task/${id}`);
    }
    displayData(id){
       return this._http.get(`/task/${id}`);
+   }
+   addTask(newTask) {
+      return this._http.post('/task/new', newTask);
    }
 }

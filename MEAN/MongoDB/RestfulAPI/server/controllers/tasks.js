@@ -26,6 +26,8 @@ module.exports = {
                 res.json({task:success})
             })
             .catch(err => {
+                console.log("******* error:")
+                console.log(err);
                 res.json({task:err});
                 }
             )
@@ -39,6 +41,8 @@ module.exports = {
                 res.json({task:success})
             })
             .catch(err => {
+                console.log("******* error:")
+                console.log(err);
                 res.json({task:err});
             })
     },
@@ -47,10 +51,12 @@ module.exports = {
         const {id} = req.params;
         Task.updateOne({_id:id}, req.body)
             .then(success => {
-                console.log("success path to update data")
+                console.log("data updated successfully")
                 res.json({task:success})
             })
             .catch(err => {
+                console.log("******* error:")
+                console.log(err);
                 res.json({task:err});
             })
     },
@@ -61,8 +67,9 @@ module.exports = {
             res.json(data)
         })
         .catch(err => {
-            res.json(task.err)
+            console.log("******* error:");
+            console.log(err);
+            res.json(err);
         })
-        
     }
 }
