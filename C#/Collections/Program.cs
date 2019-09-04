@@ -24,14 +24,8 @@ namespace Collections
             flavors.Add("pistachio");
             // Output the length of this list after building it
             Console.WriteLine(flavors.Count);
-            // int count = 0;
-            // foreach (str Flavor in FlavorTypes)
-            //     {
-            //     count ++;
-            //     }
-            // Console.WriteLine(count);
+
             // Output the third flavor in the list, then remove this value
-    
             Console.WriteLine(flavors[2]);
             flavors.RemoveAt(2);
 
@@ -51,6 +45,5 @@ namespace Collections
                 Console.WriteLine(j.Key + " - " + j.Value);
             }
         }
-    }       
-
+    }
 }
