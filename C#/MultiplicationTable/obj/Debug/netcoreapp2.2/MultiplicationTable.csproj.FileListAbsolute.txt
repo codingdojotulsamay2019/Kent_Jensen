@@ -1,0 +1,11 @@
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\MultiplicationTable\bin\Debug\netcoreapp2.2\MultiplicationTable.deps.json
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\MultiplicationTable\bin\Debug\netcoreapp2.2\MultiplicationTable.runtimeconfig.json
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\MultiplicationTable\bin\Debug\netcoreapp2.2\MultiplicationTable.runtimeconfig.dev.json
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\MultiplicationTable\bin\Debug\netcoreapp2.2\MultiplicationTable.dll
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\MultiplicationTable\bin\Debug\netcoreapp2.2\MultiplicationTable.pdb
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\MultiplicationTable\obj\Debug\netcoreapp2.2\MultiplicationTable.csprojAssemblyReference.cache
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\MultiplicationTable\obj\Debug\netcoreapp2.2\MultiplicationTable.csproj.CoreCompileInputs.cache
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\MultiplicationTable\obj\Debug\netcoreapp2.2\MultiplicationTable.AssemblyInfoInputs.cache
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\MultiplicationTable\obj\Debug\netcoreapp2.2\MultiplicationTable.AssemblyInfo.cs
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\MultiplicationTable\obj\Debug\netcoreapp2.2\MultiplicationTable.dll
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\MultiplicationTable\obj\Debug\netcoreapp2.2\MultiplicationTable.pdb

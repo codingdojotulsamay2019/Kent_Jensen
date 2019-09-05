@@ -38,7 +38,7 @@ namespace Human
             // Build Attack method
             public int Attack(Human target)
             {
-                System.Console.WriteLine($"Attacking {target}!");
+                System.Console.WriteLine($"Attacking {target.Name}!");
                 int damage = Strength*5;
                 target.Health -= damage;
                 return target.Health;

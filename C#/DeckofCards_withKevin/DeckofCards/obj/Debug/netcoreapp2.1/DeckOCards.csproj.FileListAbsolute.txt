@@ -1,0 +1,22 @@
+c:\Users\yueka\Documents\Coding Dojo\csharp\DeckofCards\bin\Debug\netcoreapp2.1\DeckOCards.deps.json
+c:\Users\yueka\Documents\Coding Dojo\csharp\DeckofCards\bin\Debug\netcoreapp2.1\DeckOCards.runtimeconfig.json
+c:\Users\yueka\Documents\Coding Dojo\csharp\DeckofCards\bin\Debug\netcoreapp2.1\DeckOCards.runtimeconfig.dev.json
+c:\Users\yueka\Documents\Coding Dojo\csharp\DeckofCards\bin\Debug\netcoreapp2.1\DeckOCards.dll
+c:\Users\yueka\Documents\Coding Dojo\csharp\DeckofCards\bin\Debug\netcoreapp2.1\DeckOCards.pdb
+c:\Users\yueka\Documents\Coding Dojo\csharp\DeckofCards\obj\Debug\netcoreapp2.1\DeckOCards.csprojAssemblyReference.cache
+c:\Users\yueka\Documents\Coding Dojo\csharp\DeckofCards\obj\Debug\netcoreapp2.1\DeckOCards.csproj.CoreCompileInputs.cache
+c:\Users\yueka\Documents\Coding Dojo\csharp\DeckofCards\obj\Debug\netcoreapp2.1\DeckOCards.AssemblyInfoInputs.cache
+c:\Users\yueka\Documents\Coding Dojo\csharp\DeckofCards\obj\Debug\netcoreapp2.1\DeckOCards.AssemblyInfo.cs
+c:\Users\yueka\Documents\Coding Dojo\csharp\DeckofCards\obj\Debug\netcoreapp2.1\DeckOCards.dll
+c:\Users\yueka\Documents\Coding Dojo\csharp\DeckofCards\obj\Debug\netcoreapp2.1\DeckOCards.pdb
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\DeckofCards_withKevin\DeckofCards\obj\Debug\netcoreapp2.1\DeckOCards.csprojAssemblyReference.cache
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\DeckofCards_withKevin\DeckofCards\obj\Debug\netcoreapp2.1\DeckOCards.csproj.CoreCompileInputs.cache
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\DeckofCards_withKevin\DeckofCards\obj\Debug\netcoreapp2.1\DeckOCards.AssemblyInfoInputs.cache
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\DeckofCards_withKevin\DeckofCards\obj\Debug\netcoreapp2.1\DeckOCards.AssemblyInfo.cs
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\DeckofCards_withKevin\DeckofCards\obj\Debug\netcoreapp2.1\DeckOCards.dll
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\DeckofCards_withKevin\DeckofCards\obj\Debug\netcoreapp2.1\DeckOCards.pdb
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\DeckofCards_withKevin\DeckofCards\bin\Debug\netcoreapp2.1\DeckOCards.deps.json
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\DeckofCards_withKevin\DeckofCards\bin\Debug\netcoreapp2.1\DeckOCards.runtimeconfig.json
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\DeckofCards_withKevin\DeckofCards\bin\Debug\netcoreapp2.1\DeckOCards.runtimeconfig.dev.json
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\DeckofCards_withKevin\DeckofCards\bin\Debug\netcoreapp2.1\DeckOCards.dll
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\DeckofCards_withKevin\DeckofCards\bin\Debug\netcoreapp2.1\DeckOCards.pdb

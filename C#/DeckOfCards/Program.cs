@@ -27,7 +27,6 @@ namespace DeckOfCards
             public class Card
             {
                 public string StringVal {get;set;}
-
                 public string Suit {get;set;}
                 public int val {get;set;}
             }

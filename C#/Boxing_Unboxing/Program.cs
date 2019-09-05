@@ -14,7 +14,7 @@ namespace Boxing_Unboxing
             BoxedData.Add(true);
             BoxedData.Add("chair");
             // Create an empty List of type object 
-            // Add the following values to the list: 7, 28, -1, true, "chair" 
+            // Add the following values to the list: 7, 28, -1, true, "chair"
             // Loop through the list and print all values (Hint: Type Inference might help here!) 
             int sum = 0;
             for(int i = 0; i<BoxedData.Count;i++)
