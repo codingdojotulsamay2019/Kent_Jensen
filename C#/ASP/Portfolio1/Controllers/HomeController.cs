@@ -9,24 +9,24 @@ namespace HelloASP
         [HttpGet] //GET request handling
 
         //response will be a method, or action.
-        public string Index()
+        public ViewResult Index()
         {
-            return "This is my Index";
+            return View();
         }
         
         //Requests
         //localhost:5000/projects
         //this below line does the same as the above route, just in one line rather than 2. 
         [HttpGet("projects")]
-        public string Projects()
+        public ViewResult Projects()
         {
-            return "These are my projects";
+            return View();
         }
         // localhost:5000/contact
         [HttpGet("contact")]
-        public string Contact()
+        public ViewResult Contact()
         {
-            return "This is my Contact!";
+            return View();
         }
     }
 

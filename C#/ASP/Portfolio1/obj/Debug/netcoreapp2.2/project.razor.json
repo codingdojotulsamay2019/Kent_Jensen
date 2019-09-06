@@ -2966,13 +2966,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Contact\\contact.cshtml",
-      "TargetPath": "Views\\Contact\\contact.cshtml",
+      "FilePath": "Views\\Home\\projects.cshtml",
+      "TargetPath": "Views\\Home\\projects.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Projects\\projects.cshtml",
-      "TargetPath": "Views\\Projects\\projects.cshtml",
+      "FilePath": "Views\\Home\\contact.cshtml",
+      "TargetPath": "Views\\Home\\contact.cshtml",
       "FileKind": "mvc"
     }
   ],
