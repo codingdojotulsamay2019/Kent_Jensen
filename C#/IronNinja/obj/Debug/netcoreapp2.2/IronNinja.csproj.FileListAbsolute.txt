@@ -1,0 +1,11 @@
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\IronNinja\bin\Debug\netcoreapp2.2\IronNinja.deps.json
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\IronNinja\bin\Debug\netcoreapp2.2\IronNinja.runtimeconfig.json
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\IronNinja\bin\Debug\netcoreapp2.2\IronNinja.runtimeconfig.dev.json
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\IronNinja\bin\Debug\netcoreapp2.2\IronNinja.dll
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\IronNinja\bin\Debug\netcoreapp2.2\IronNinja.pdb
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\IronNinja\obj\Debug\netcoreapp2.2\IronNinja.csprojAssemblyReference.cache
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\IronNinja\obj\Debug\netcoreapp2.2\IronNinja.csproj.CoreCompileInputs.cache
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\IronNinja\obj\Debug\netcoreapp2.2\IronNinja.AssemblyInfoInputs.cache
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\IronNinja\obj\Debug\netcoreapp2.2\IronNinja.AssemblyInfo.cs
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\IronNinja\obj\Debug\netcoreapp2.2\IronNinja.dll
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\IronNinja\obj\Debug\netcoreapp2.2\IronNinja.pdb

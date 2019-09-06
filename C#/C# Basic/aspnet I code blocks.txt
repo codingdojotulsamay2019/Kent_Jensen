@@ -1,0 +1,102 @@
+Setting up a web application with the ASP.NET Core framework is almost as simple as it was to build a console application. After navigating to where you'd like your project to be saved, we will use the web argument (instead of console) with our dotnet new command:
+dotnet new web --no-https -o ProjectName
+What's with the --no-https?
+By default, ASP will want to run your web applications using HTTPS. This is great for security, but will create some friction upfront - as you would need to then generate https certs for your local browsers. For now, it's best to turn this option off.
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        CreateWebHostBuilder(args).Build().Run();
+    }
+    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+        WebHost.CreateDefaultBuilder(args)
+            .UseStartup<Startup>();
+}
+
+
+
+Dotnet Watch
+One more helpful tool is the Dotnet Watcher. Running our application with this tool tells our project to automatically rebuild and run after we make changes to our .cs files. Though not crucial, this tool can save us some time during our learning experience. 
+To run the Watcher tool, simply run:
+
+dotnet watch run
+
+Note: Even though the Watcher is running, it may still take a few seconds for your project to rebuild after a change.
+
+
+
+
+
+Adding MVC
+
+We now have a working web server that is able to display text like "Hello World" on the web! The problem ends up being that all of our logic continues to live in the Program.cs and Startup.cs files. As we continue to grow our web applications this system simply is not going to work as these files would quickly become unwieldy. To combat this early, we are going to add the MVC structure to our applications! MVC will allow us to break out different components of our app into nicely sectioned class-based files. Lucky for us, ASP.NET Core was built very much with MVC in mind!
+Do you remember where we go to configure our application? In the Startup class, we'll need to do two things to configure this piece of middleware. First, we need to tell our application that we'll be using the MVC service (more on services later!). Then we need to tell it when we want to actually use that service:
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddMvc();  //add this line
+    }
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+        // some code removed for brevity
+        app.UseMvc();   //add this line, replacing the app.run lines of code
+    }
+
+
+
+
+
+It is now time to better understand all that is going on inside of our Startup class's ConfigureServices method, which is, in fact, a central aspect of how this framework is wired. Every time we add a new line to this method, with something like: 
+
+        public static void ConfigureServices(IServiceCollection services)
+    {
+        services.AddMvc();
+    }
+we are adding a so-called "service" into our application's Service Container, seen here as IServiceCollection. This makes the specified service available to the rest of your application in a number of ways. In this example here, we are simply saying that our app wants to make use of the framework-provided MVC services, which, by and large, are handled internally by the framework itself to make the whole thing go. This entire system, in fact, utilizes a programming design-pattern known as dependency injection, which can be used alongside another design-pattern you are already familiar with (OOP).
+
+
+
+
+Dependency Injection
+The basic premise of dependency injection is that rather than make tightly-coupled associations between classes using inheritance, you can provide objects that any class might need, known here as services, to a shared container, and anytime a class requires one of these services, you can inject that object into the class. Now what does this all actually look like in your code? You can use a type of DI, called Constructor Injection, to bring any service into your class by accepting an object of the desired service type into the Constructor method of that class.
+To see an example of this, let's bring a service into our Startup class's constructor. One you will be working with soon is a framework-service called IHostingEnvironment, which is an object that will tell you more about the machine that is hosting the application. While in development, this will be your local PC; when you deploy, this will be a remote web server.
+
+    public class Startup
+    {
+        // other code in Startup
+        public Startup(IHostingEnvironment env)
+        {
+            // run this in the debugger, and inspect the "env" object! You can use this object to tell you // the root path of your application, for the purposes of reading from local files, and for
+            // checking environment variables - such as if you are running in Development or Production
+            
+            Console.WriteLine(env.ContentRootPath);
+            Console.WriteLine(env.IsDevelopment());
+        }
+    }
+
+
+
+
+
+Controllers
+    using Microsoft.AspNetCore.Mvc;
+    namespace YourNamespace.Controllers     //be sure to use your own project's namespace!
+    {
+        public class HelloController : Controller   //remember inheritance??
+        {
+            //for each route this controller is to handle:
+            [HttpGet]       //type of request
+            [Route("")]     //associated route string (exclude the leading /)
+            public string Index()
+            {
+                return "Hello World from HelloController!";
+            }
+        }
+    }
+There may seem like a lot going on here, but it will help to remember we are seeing an example of applied OOP.  HelloController is simply a class inheriting from the MVC Controller class, and thus it receives all the functionality it needs to perform its central duties as a Controller: to intercept incoming requests, and to provide server responses to those requests.
+
+Actions
+ASP has a special name for a Controller method that delivers a server response: Action.  And while you may include any number of fields, methods, and properties in your Controller classes, they will mostly be comprised of actions: such as Index in the provided example.  The two parts that make up an action - what separates it from any other method - is that it is matched with a route and that it delivers a valid response.  A string is a valid response, and will be served as text content to the client.  By virtue of the two lines of square bracket notation directly above (more on this shortly!), GET requests to localhost:5000/ will be matched with our Index action, which in turn will deliver back its text response.
+
+
+
