@@ -1,0 +1,33 @@
+@model User
+
+<h1>Register</h1>
+<div class="register">
+<form asp-action="Register" asp-controller="Home" method="post">
+    <div class="form-group">
+        <label asp-for="fName"></label>
+        <input asp-for="fName">
+        <span asp-validation-for="fName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="lName"></label>
+        <input asp-for="lName">
+        <span asp-validation-for="lName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="useremail"></label>
+        <input asp-for="useremail">
+        <span asp-validation-for="useremail"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="userpass"></label>
+        <input asp-for="userpass">
+        <span asp-validation-for="userpass"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="userpassvalid"></label>
+        <input asp-for="userpassvalid">
+        <span asp-validation-for="userpassvalid"></span>
+    </div>
+    <input type="submit" value="Sign Up">
+</form>
+</div>
