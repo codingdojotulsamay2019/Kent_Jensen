@@ -1,0 +1,41 @@
+
+@model Dish
+<h1>Add a new Dish!</h1>
+
+<a href="/">Home</a>
+
+<form asp-action="NewDish" method="POST" asp-controller="Home">
+    <label asp-for="Chef"></label>
+    <input asp-for="Chef" type="text">
+    <span class="text-danger" asp-validation-for="Chef"></span>
+<br>
+    <label asp-for="Name"></label>
+    <input asp-for="Name" type="text">
+    <span class="text-danger" asp-validation-for="Name"></span>
+<br>
+    <label asp-for="Calories"></label>
+    <input asp-for="Calories" type="text">
+    <span class="text-danger" asp-validation-for="Calories"></span>
+<br>
+
+
+    <div class="form-group">
+    <label asp-for="Tastiness" for="sel1"></label>
+    <select class="form-control, col-xs-2" asp-for="Tastiness" id="sel1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+    <span class="text-danger" asp-validation-for="Tastiness"></span>
+    </div>
+<br>
+
+    <label asp-for="Description"></label>
+    <input asp-for="Description" type="textarea">
+    <span class="text-danger" asp-validation-for="Description"></span>
+<br>
+    <button type="submit">Add Dish</button>
+    <a href="/"><input type="button" value="Cancel"></a>
+</form>
