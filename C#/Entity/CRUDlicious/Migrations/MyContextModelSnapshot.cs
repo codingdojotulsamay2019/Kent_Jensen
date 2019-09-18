@@ -19,10 +19,11 @@ namespace Crudlicious.Migrations
 
             modelBuilder.Entity("Crudlicious.Models.Dish", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("DishId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("Calories");
+                    b.Property<int?>("Calories")
+                        .IsRequired();
 
                     b.Property<string>("Chef")
                         .IsRequired();
@@ -35,11 +36,12 @@ namespace Crudlicious.Migrations
                     b.Property<string>("Name")
                         .IsRequired();
 
-                    b.Property<int>("Tastiness");
+                    b.Property<int?>("Tastiness")
+                        .IsRequired();
 
                     b.Property<DateTime>("UpdatedAt");
 
-                    b.HasKey("ID");
+                    b.HasKey("DishId");
 
                     b.ToTable("Dish");
                 });

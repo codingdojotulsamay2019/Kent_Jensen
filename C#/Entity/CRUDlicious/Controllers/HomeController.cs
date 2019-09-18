@@ -42,10 +42,10 @@ namespace Crudlicious.Controllers
         // }
 
         //SHOW view
-        [HttpGet("{ID}")]
-        public IActionResult GetOneDish(int ID)
+        [HttpGet("{tempid}")]
+        public IActionResult GetOneDish(int tempid)
         {
-            Dish oneDish = dbContext.Dishes.FirstOrDefault(Dish => Dish.ID == ID);
+            Dish oneDish = dbContext.Dishes.FirstOrDefault(Dish => Dish.DishId == tempid);
             // Other code
             return View("Show", oneDish);
         }
@@ -80,7 +80,7 @@ namespace Crudlicious.Controllers
         [HttpGet("edit/{tempid}")]
         public IActionResult Edit(int tempid)
         {
-            Dish oneDish = dbContext.Dishes.SingleOrDefault(Dish => Dish.ID == tempid);
+            Dish oneDish = dbContext.Dishes.SingleOrDefault(Dish => Dish.DishId == tempid);
             return View("EditForm", oneDish);
         }
 
@@ -91,7 +91,7 @@ namespace Crudlicious.Controllers
         {
             if(ModelState.IsValid)
             {
-                Dish dish = dbContext.Dishes.SingleOrDefault(a => a.ID == tempid);
+                Dish dish = dbContext.Dishes.SingleOrDefault(a => a.DishId == tempid);
                 dish.Name = oneDish.Name;
                 dish.Chef = oneDish.Chef;
                 dish.Description = oneDish.Description;
@@ -111,7 +111,7 @@ namespace Crudlicious.Controllers
         [HttpGet("delete/{tempid}")]
         public IActionResult Delete(int tempid)
         {
-            Dish thisdish = dbContext.Dishes.SingleOrDefault(a => a.ID == tempid);
+            Dish thisdish = dbContext.Dishes.SingleOrDefault(a => a.DishId == tempid);
             dbContext.Dishes.Remove(thisdish);
             dbContext.SaveChanges();
             return RedirectToAction("Index");
