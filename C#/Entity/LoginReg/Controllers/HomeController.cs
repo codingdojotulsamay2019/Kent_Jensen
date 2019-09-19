@@ -53,7 +53,7 @@ namespace LoginReg.Controllers
                     //save a copy of info into session.
                     HttpContext.Session.SetString("UserName", user.Email);
                     HttpContext.Session.SetInt32("UserId", user.UserId);
-                    return RedirectToAction("success");
+                    return RedirectToAction("Success");
                 }
             }
             else
@@ -79,13 +79,8 @@ namespace LoginReg.Controllers
             if(ModelState.IsValid)
             {
                 // gets UserName value from session, stores as UserEmail
-                string UserEmail = HttpContext.Session.GetString("UserName");
                 var userInDb = dbContext.Users.FirstOrDefault(u => u.Email == submittedUser.Email);
-
                 //create an instance of LoginUser to contain info. 
-                LoginUser thisUser = new LoginUser();
-                thisUser.Email = submittedUser.Email;
-                thisUser.Password = submittedUser.Password;
             
                 //if User in db is null... reject login.
                 if(userInDb == null)
@@ -94,24 +89,11 @@ namespace LoginReg.Controllers
                     ModelState.AddModelError("Email", "Invalid Email/Password - 1");
                     return View("Login");
                 }
-                //if UserEmail in session is null and the submitted user is null... reject. 
-                if(thisUser.Email == null)
-                {
-                    ModelState.AddModelError("Email", "Invalid Email/Password - 2");
-                    return View("Login");
-                }
-                //if thisUSer.Email doesn't match db result
-                if(thisUser.Email != userInDb.Email)
-                {
-                    ModelState.AddModelError("Email", "Invalid Email/Password - 3");
-                    return View("Login");
-                }
-                else
-                {
+                
                     //intializes hasher object
                     var hasher = new PasswordHasher<LoginUser>();
                     //verify provided password against hash stored in db
-                    var result = hasher.VerifyHashedPassword(thisUser, userInDb.Password, thisUser.Password);
+                    var result = hasher.VerifyHashedPassword(submittedUser, userInDb.Password, submittedUser.Password);
                     // 0 == failure.
                     if(result == 0)
                     {
@@ -121,18 +103,12 @@ namespace LoginReg.Controllers
                     }
                     else
                     {
-                        if (userInDb.Email != thisUser.Email)
-                        {
-                            return View("Login");
-                        }
-                        else
-                        {
-                            return View("Success", thisUser);
-                        }
+                        HttpContext.Session.SetString("UserName", userInDb.Email);
+                        HttpContext.Session.SetInt32("UserId", userInDb.UserId);
+                        return RedirectToAction("Success");
                     }
                 }
-            }
-            return View("Login");
+                return View("Login");
         }
 
 

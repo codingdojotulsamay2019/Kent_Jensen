@@ -2,6 +2,9 @@
     ViewData["Title"] = "Home Page";
 }
 @model User
+
+<a href="/login"><button>Login Here</button></a>
+
 <h1>Register</h1>
 <form asp-action="Register" method="POST" asp-controller="Home">
     <div>
@@ -11,7 +14,7 @@
 <br>
     <label asp-for="LastName"></label>
     <input asp-for="LastName" type="text">
-    <span class="text-danger" asp-validation-for="Password"></span>
+    <span class="text-danger" asp-validation-for="LastName"></span>
 <br>
 
     <label asp-for="Email"></label>
