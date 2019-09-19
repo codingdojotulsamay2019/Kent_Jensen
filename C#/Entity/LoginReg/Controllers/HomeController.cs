@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using LoginReg.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Http;
+
 
 namespace LoginReg.Controllers
 {
@@ -47,7 +49,11 @@ namespace LoginReg.Controllers
                     user.Password = Hasher.HashPassword(user, user.Password);
                     dbContext.Add(user);
                     dbContext.SaveChanges();
-                    return View("Success",user);
+
+                    //save a copy of info into session.
+                    HttpContext.Session.SetString("UserName", user.Email);
+                    HttpContext.Session.SetInt32("UserId", user.UserId);
+                    return RedirectToAction("success");
                 }
             }
             else
@@ -57,45 +63,89 @@ namespace LoginReg.Controllers
             }
         }
 
+        //Get Login page
         [HttpGet("login")]
-        public IActionResult Login(LoginUser userSubmission)
+        public IActionResult LoginLoad()
+        {
+            return View("Login");
+        }
+
+
+
+        //Handle POST data from Login page form
+        [HttpPost("login")]
+        public IActionResult Login(LoginUser submittedUser)
         {
             if(ModelState.IsValid)
             {
-                // If inital ModelState is valid, query for a user with provided email
-                var userInDb = dbContext.Users.FirstOrDefault(u => u.Email == userSubmission.Email);
-                // If no user exists with provided email
+                // gets UserName value from session, stores as UserEmail
+                string UserEmail = HttpContext.Session.GetString("UserName");
+                var userInDb = dbContext.Users.FirstOrDefault(u => u.Email == submittedUser.Email);
+
+                //create an instance of LoginUser to contain info. 
+                LoginUser thisUser = new LoginUser();
+                thisUser.Email = submittedUser.Email;
+                thisUser.Password = submittedUser.Password;
+            
+                //if User in db is null... reject login.
                 if(userInDb == null)
                 {
-                    // Add an error to ModelState and return to View!
-                    ModelState.AddModelError("Email", "Invalid Email/Password");
-                    return View("Index");
+                    //Add an error to the ModelState and return to View.
+                    ModelState.AddModelError("Email", "Invalid Email/Password - 1");
+                    return View("Login");
+                }
+                //if UserEmail in session is null and the submitted user is null... reject. 
+                if(thisUser.Email == null)
+                {
+                    ModelState.AddModelError("Email", "Invalid Email/Password - 2");
+                    return View("Login");
+                }
+                //if thisUSer.Email doesn't match db result
+                if(thisUser.Email != userInDb.Email)
+                {
+                    ModelState.AddModelError("Email", "Invalid Email/Password - 3");
+                    return View("Login");
                 }
                 else
                 {
-                    // Initialize hasher object
+                    //intializes hasher object
                     var hasher = new PasswordHasher<LoginUser>();
-                    // verify provided password against hash stored in db
-                    var result = hasher.VerifyHashedPassword(userSubmission, userInDb.Password, userSubmission.Password);
-                    
-                    // result can be compared to 0 for failure
+                    //verify provided password against hash stored in db
+                    var result = hasher.VerifyHashedPassword(thisUser, userInDb.Password, thisUser.Password);
+                    // 0 == failure.
                     if(result == 0)
                     {
-                        // handle failure (this should be similar to how "existing email" is handled)
-                        ModelState.AddModelError("Password","Invalid Email/Password");
-                        return View("Index");
+                        //failure
+                        ModelState.AddModelError("Email", "Invalid Email/Password");
+                        return View("Login");
                     }
                     else
                     {
-                        //set a value in session = true;
-                        return RedirectToAction("Success");
+                        if (userInDb.Email != thisUser.Email)
+                        {
+                            return View("Login");
+                        }
+                        else
+                        {
+                            return View("Success", thisUser);
+                        }
                     }
                 }
             }
-            else
-            {
-                return View("Index");
-            }
+            return View("Login");
+        }
+
+
+        [HttpGet("Logout")]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return View("Index");
+        }
+        [HttpGet("Success")]
+        public IActionResult Success()
+        {
+            return View();
         }
         public IActionResult Privacy()
         {

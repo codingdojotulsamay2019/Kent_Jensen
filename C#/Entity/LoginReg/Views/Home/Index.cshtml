@@ -4,25 +4,30 @@
 @model User
 <h1>Register</h1>
 <form asp-action="Register" method="POST" asp-controller="Home">
+    <div>
     <label asp-for="FirstName"></label>
     <input asp-for="FirstName" type="text">
     <span class="text-danger" asp-validation-for="FirstName"></span>
-
+<br>
     <label asp-for="LastName"></label>
     <input asp-for="LastName" type="text">
     <span class="text-danger" asp-validation-for="Password"></span>
+<br>
 
     <label asp-for="Email"></label>
     <input asp-for="Email" type="email">
     <span class="text-danger" asp-validation-for="Email"></span>
-
+</div>
+<div>
     <label asp-for="Password"></label>
     <input asp-for="Password" type="password">
     <span class="text-danger" asp-validation-for="Password"></span>
-
+<br>
     <label asp-for="Confirm"></label>
     <input asp-for="Confirm" type="password">
     <span class="text-danger" asp-validation-for="Confirm"></span>
+</div>
+<br>
 
     <button type="submit">Register</button>
 
