@@ -142,9 +142,16 @@ namespace LoginReg.Controllers
             HttpContext.Session.Clear();
             return View("Index");
         }
+
+
         [HttpGet("Success")]
         public IActionResult Success()
         {
+            string UserEmail = HttpContext.Session.GetString("UserName");
+            if(UserEmail == null)
+            {
+                return View("Login");
+            }
             return View();
         }
         public IActionResult Privacy()

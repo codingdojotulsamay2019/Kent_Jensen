@@ -10,26 +10,29 @@ namespace LoginReg.Models
         [Key]
         public int UserId {get;set;}
 
-        [Required]
+        [Required(ErrorMessage="Dish must have a name!")]
+        [MinLength(2, ErrorMessage="First name must be 2 characters or longer!")]
         [Display(Name="First Name:")]
         public string FirstName {get;set;}
 
-        [Required]
+        [Required(ErrorMessage="Dish must have a name!")]
+        [MinLength(2, ErrorMessage="Last name must be 2 characters or longer!")]
         [Display(Name="Last Name:")]
-
         public string LastName {get;set;}
 
-        [EmailAddress]
-        [Required]
-        [Display(Name="Email:")]
 
+        [EmailAddress]
+        [Required(ErrorMessage="Dish must have a name!")]
+        [Display(Name="Email:")]
         public string Email {get;set;}
 
+
         [DataType(DataType.Password)]
-        [Required]
+        [Required(ErrorMessage="Dish must have a name!")]
         [Display(Name="Password:")]
         [MinLength(8, ErrorMessage="Password must be 8 characters or longer!")]
         public string Password {get;set;}
+
 
         public DateTime CreatedAt {get;set;} = DateTime.Now;
         public DateTime UpdatedAt {get;set;} = DateTime.Now;
@@ -37,7 +40,8 @@ namespace LoginReg.Models
 
         // Will not be mapped to your users table!
         [NotMapped]
-        [Compare("Password")]
+        [Required(ErrorMessage="Confirm password cannot be blank!")]
+        [Compare("Password", ErrorMessage="Passwords must match!")]
         [DataType(DataType.Password)]
         [Display(Name="Confirm Password:")]
         public string Confirm {get;set;}
