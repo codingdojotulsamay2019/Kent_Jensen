@@ -5,6 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ChefsNDishes.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
 namespace ChefsNDishes.Controllers
 {
@@ -17,15 +20,53 @@ namespace ChefsNDishes.Controllers
         {
             dbContext=context;
         }
+
+        [HttpGet("")]
         public IActionResult Index()
         {
             List<Dish> CreatedDishes = dbContext.CreatedDishes
-            // populates each Message with its related User object (Creator)
-            .Include(message => message.Creator)
+            // populates each Dish with its related Chef object (Creator)
+            .Include(dish => dish.Creator)
             .ToList();
-    
             return View(CreatedDishes);
         }
+
+
+        [HttpGet("chefId")]
+        public IActionResult ChefDetails(int chefId)
+        {
+            // Number of dishes created by this Chef
+            int numDishes = dbContext.Chefs
+                // Including Dishes, so that we may query on this field
+                .Include(chef => chef.CreatedDishes)
+                // Get a Chef with chefId
+                .FirstOrDefault(chef => chef.ChefId == chefId)
+                // Now, with a reference to a Chef object, and access to a Chefs Dishes
+                // We can get the .Count property of the Dishes List
+                .CreatedDishes.Count;
+            
+            // Chef with the longest Dish, we can do this in two stages
+            // First, find the Length of the longest Dish
+            int longestDishLength = dbContext.Dishes.Max(dish => dish.Description.Length);
+            
+            // Second, select one Chef who's CreatedDishes has Any that matches this character count
+            // Note here that CreatedDishes is a List, and thus can take a LINQ expression: such as .Any()
+            Chef chefWithLongest = dbContext.Chefs
+                .Include(chef => chef.CreatedDishes)
+                .FirstOrDefault(chef => chef.CreatedDishes
+                    .Any(dish => dish.Description.Length == longestDishLength));
+            
+            // Dishes NOT related to this Chef:
+            // Since this query only requires checking a Dish's ChefId
+            // and doesn't require us to check data contained in a Dish's Creator
+            // We can do this without a .Include()
+            List<Dish> unrelatedDishes = dbContext.Dishes
+                .Where(dish => dish.ChefId != chefId)
+                .ToList();
+            
+            return View();
+        }
+
 
         public IActionResult Privacy()
         {

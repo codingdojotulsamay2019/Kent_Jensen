@@ -9,7 +9,25 @@
 
 @model List<Dish>
 
-@foreach(var dish in Model)
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col"># of Dishes</th>
+    </tr>
+  </thead>
+  <tbody>
+      @foreach(var dish in Model)
 {
-    <p>@dish.Creator.FirstName says: @dish.Name</p>
+    <tr>
+      <th scope="row"></th>
+      <td>@dish.Creator.firstName
+          @dish.Creator.lastName</td>
+          <!--Need to find method to change date to yrs old -->
+      <td>@dish.Creator.DoB</td>
+      <td>@dish.Creator.CreatedDishes.Count()</td>
+    </tr>
 }
+  </tbody>
+</table>
