@@ -24,15 +24,71 @@ namespace ChefsNDishes.Controllers
         [HttpGet("")]
         public IActionResult Index()
         {
+            List<Chef> AllChefs = dbContext.Chefs
+            .Include(chef => chef.CreatedDishes)
+            .ToList();
+            return View(AllChefs);
+        }
+
+        [HttpGet("dishes")]
+        public IActionResult allDishes()
+        {
             List<Dish> CreatedDishes = dbContext.CreatedDishes
             // populates each Dish with its related Chef object (Creator)
             .Include(dish => dish.Creator)
             .ToList();
-            return View(CreatedDishes);
+            return View("dishes",CreatedDishes);
+        }
+        //route to form to add new chef
+        [HttpGet("new")]
+        public IActionResult newChef()
+        {
+            return View();
+        }
+        //route for post data of chef
+        [HttpPost("new")]
+        public IActionResult addNewChef(Chef newChef)
+        {
+            if(ModelState.IsValid)
+            {
+                dbContext.Add(newChef);
+                dbContext.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("newChef");
+            }
         }
 
+        //route to form to add new dish
+        [HttpGet("dishes/new")]
+        public IActionResult newDish()
+        {
+            List<Chef> AllTheChefs = dbContext.Chefs.ToList();
+            ViewBag.ChefList = AllTheChefs;
+            return View();
+        }
 
-        [HttpGet("chefId")]
+        //route for post data of dish
+        [HttpPost("dishes/new")]
+        public IActionResult addNewDish(Dish newDish)
+        {
+            if(ModelState.IsValid)
+            {
+                dbContext.Add(newDish);
+                dbContext.SaveChanges();
+                return RedirectToAction("allDishes");
+            }
+            else
+            {
+                List<Chef> AllTheChefs = dbContext.Chefs.ToList();
+                ViewBag.ChefList = AllTheChefs;
+                return View("newDish");
+            }
+        }
+
+        [HttpGet("chefs/{chefId}")]
         public IActionResult ChefDetails(int chefId)
         {
             // Number of dishes created by this Chef

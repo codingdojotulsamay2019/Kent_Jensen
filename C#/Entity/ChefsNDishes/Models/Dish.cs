@@ -11,6 +11,7 @@ namespace ChefsNDishes.Models
         // the [Key] attribute is used to mark the Model property being used for your table's Primary Key
         [Key]
         public int DishId { get; set; }
+        
         // MySQL VARCHAR and TEXT types can be represented by a string
         [Required(ErrorMessage="Dish must have a name!")]
         [Display(Name="Dish Name:")]
@@ -34,7 +35,11 @@ namespace ChefsNDishes.Models
         [Required(ErrorMessage="Dish must have a description!")]
         [Display(Name="Description:")]
         public string Description { get; set; }
+
+        [Required(ErrorMessage="Dish must have a chef!")]
+        [Display(Name="Chef:")]
         public Chef Creator {get;set;}
+
         // The MySQL DATETIME type can be represented by a DateTime
         public DateTime CreatedAt {get;set;}
         public DateTime UpdatedAt {get;set;}

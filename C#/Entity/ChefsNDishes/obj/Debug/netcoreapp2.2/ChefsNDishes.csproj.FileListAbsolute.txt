@@ -28,3 +28,6 @@ C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Entity\ChefsNDishes\bin
 C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Entity\ChefsNDishes\bin\Debug\netcoreapp2.2\ChefsNDishes.Views.pdb
 C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Entity\ChefsNDishes\obj\Debug\netcoreapp2.2\ChefsNDishes.Views.pdb
 C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Entity\ChefsNDishes\obj\Debug\netcoreapp2.2\ChefsNDishes.csproj.CopyComplete
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Entity\ChefsNDishes\obj\Debug\netcoreapp2.2\Razor\Views\Home\Dishes.g.cshtml.cs
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Entity\ChefsNDishes\obj\Debug\netcoreapp2.2\Razor\Views\Home\newChef.g.cshtml.cs
+C:\Users\zelin\Desktop\Code\UPLOAD TO GIT\Kent_Jensen\C#\Entity\ChefsNDishes\obj\Debug\netcoreapp2.2\Razor\Views\Home\newDish.g.cshtml.cs

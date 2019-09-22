@@ -1,0 +1,36 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model List<Dish>
+
+<h1> <a href="/"> Chefs</a> | Dishes </h1>
+
+
+<a href="dishes/new">Add a Dish</a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Chef</th>
+      <th scope="col">Tastiness</th>
+      <th scope="col">Calories</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+      @foreach(var dish in Model)
+{
+    <tr>
+      <td>@dish.Name</td>
+          <!--Need to find method to change date to yrs old -->
+      <td>@dish.Creator.firstName @dish.Creator.lastName
+      </td>
+      <td>@dish.Tastiness</td>
+      <td>@dish.Calories</td>
+      <td>@dish.Description</td>
+    </tr>
+}
+  </tbody>
+</table>
