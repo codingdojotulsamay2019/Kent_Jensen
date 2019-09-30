@@ -1,14 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace ChefsNDishes.Models
+namespace WeddingPlanner.Models
 {
     public class MyContext : DbContext
     {
-        public DbSet<Dish> Dishes {get;set;}
-        public DbSet<Dish> CreatedDishes {get;set;}
-        public DbSet<Chef> Chefs {get;set;}
-        public DbSet<Chef> AllChefs {get;set;}
+        public DbSet<User> Users {get;set;}
+        public DbSet<Event> Events {get;set;}
+        public DbSet<Attending> Attendings {get;set;}
         public MyContext(DbContextOptions options) : base(options) { }
-        
     }
 }

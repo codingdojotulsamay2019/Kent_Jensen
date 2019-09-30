@@ -1,0 +1,51 @@
+@model List<Event>
+<nav>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Wedding</th>
+      <th scope="col">Date</th>
+      <th scope="col">Guests</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach(Event e in @Model)
+    {
+    <tr>
+      <td><a href="/showEvent/@e.EventId">@e.Wedder1 & @e.Wedder2</a></td>
+      <td>@e.SetDate()</td>
+      <td>@e.allUsersAttending.Count</td>
+        <td>
+            @{
+            var toggle = 0;
+            foreach (var j in @e.allUsersAttending)
+            {
+                if(@ViewBag.UserId == j.UserId )
+                {
+                    toggle ++;
+                }
+            }
+            if(toggle == 0)
+            {
+                if(@ViewBag.UserId == @e.OwnerId)
+                {
+                    <a href ="/delete/@e.EventId"><button>Delete</button></a>
+                }
+                else
+                {
+                    <a href ="/RSVP/@e.EventId"><button>RSVP</button></a>
+                }
+            }
+            else
+            {
+                <a href ="/RSVP/@e.EventId"><button>Un-RSVP</button></a>
+            }
+            }
+        </td>
+    </tr>
+        }
+ </tbody>
+</table>
+</nav>

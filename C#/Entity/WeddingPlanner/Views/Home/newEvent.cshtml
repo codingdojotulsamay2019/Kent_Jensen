@@ -1,0 +1,28 @@
+@model Event
+
+<h1>Plan Your Wedding</h1>
+<a href="/Dashboard">Dashboard</a><a href="Logout">Logout</a>
+
+
+<form asp-action="createEvent" method="POST" asp-controller="Home">
+    <label asp-for="Wedder1"></label>
+    <input asp-for="Wedder1" type="text">
+    <span class="text-danger" asp-validation-for="Wedder1"></span>
+<br>
+    <label asp-for="Wedder2"></label>
+    <input asp-for="Wedder2" type="text">
+    <span class="text-danger" asp-validation-for="Wedder2"></span>
+<br>
+
+    <label asp-for="Date"></label>
+    <input asp-for="Date" type="date">
+    <span class="text-danger" asp-validation-for="Date"></span>
+<br>
+
+    <label asp-for="Address"></label>
+    <input asp-for="Address" type="Address">
+    <span class="text-danger" asp-validation-for="Address"></span>
+<br>
+    <input type="hidden" asp-for="OwnerId" value="@ViewBag.UserId">
+    <button type="submit">Create</button>
+</form>

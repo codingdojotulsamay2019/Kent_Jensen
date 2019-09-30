@@ -1,0 +1,19 @@
+@model Event
+ 
+
+<h1>@Model.Wedder1 & @Model.Wedder2's Wedding</h1>
+<a href="/Dashboard">Dashboard</a><a href="Logout">Logout</a>
+
+<p>Date: @Model.Date</p>
+
+
+<p>Guests:</p>
+<ul>
+@foreach(var e in Model.allUsersAttending)
+{
+    <li>@e.User.FirstName @e.User.LastName</li>
+}
+</ul>
+
+<p>Map:</p>
+<img src="https://maps.googleapis.com/maps/api/staticmap?center=@Model.Address&zoom=12&size=400x400&key=AIzaSyB2dZT3ENLKtmXPsen2BlqDUZJU36CFkxE">
