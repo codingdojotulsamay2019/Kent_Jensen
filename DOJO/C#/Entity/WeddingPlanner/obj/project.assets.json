@@ -12156,11 +12156,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\C#\\Entity\\WeddingPlanner\\WeddingPlanner.csproj",
+      "projectUniqueName": "c:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\DOJO\\C#\\Entity\\WeddingPlanner\\WeddingPlanner.csproj",
       "projectName": "WeddingPlanner",
-      "projectPath": "C:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\C#\\Entity\\WeddingPlanner\\WeddingPlanner.csproj",
+      "projectPath": "c:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\DOJO\\C#\\Entity\\WeddingPlanner\\WeddingPlanner.csproj",
       "packagesPath": "C:\\Users\\zelin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\C#\\Entity\\WeddingPlanner\\obj\\",
+      "outputPath": "c:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\DOJO\\C#\\Entity\\WeddingPlanner\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

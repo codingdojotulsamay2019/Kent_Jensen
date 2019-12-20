@@ -12078,11 +12078,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\C#\\ASP\\TEST\\ProjectName\\ProjectName.csproj",
+      "projectUniqueName": "c:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\DOJO\\C#\\ASP\\TEST\\ProjectName\\ProjectName.csproj",
       "projectName": "ProjectName",
-      "projectPath": "C:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\C#\\ASP\\TEST\\ProjectName\\ProjectName.csproj",
+      "projectPath": "c:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\DOJO\\C#\\ASP\\TEST\\ProjectName\\ProjectName.csproj",
       "packagesPath": "C:\\Users\\zelin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\C#\\ASP\\TEST\\ProjectName\\obj\\",
+      "outputPath": "c:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\DOJO\\C#\\ASP\\TEST\\ProjectName\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

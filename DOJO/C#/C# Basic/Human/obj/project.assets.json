@@ -692,11 +692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\C#\\Human\\Human.csproj",
+      "projectUniqueName": "c:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\DOJO\\C#\\C# Basic\\Human\\Human.csproj",
       "projectName": "Human",
-      "projectPath": "C:\\users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\C#\\Human\\Human.csproj",
+      "projectPath": "c:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\DOJO\\C#\\C# Basic\\Human\\Human.csproj",
       "packagesPath": "C:\\Users\\zelin\\.nuget\\packages\\",
-      "outputPath": "C:\\users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\C#\\Human\\obj\\",
+      "outputPath": "c:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\DOJO\\C#\\C# Basic\\Human\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

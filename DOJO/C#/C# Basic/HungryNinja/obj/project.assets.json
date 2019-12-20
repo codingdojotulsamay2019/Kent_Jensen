@@ -692,11 +692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\C#\\HungryNinja\\HungryNinja.csproj",
+      "projectUniqueName": "c:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\DOJO\\C#\\C# Basic\\HungryNinja\\HungryNinja.csproj",
       "projectName": "HungryNinja",
-      "projectPath": "C:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\C#\\HungryNinja\\HungryNinja.csproj",
+      "projectPath": "c:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\DOJO\\C#\\C# Basic\\HungryNinja\\HungryNinja.csproj",
       "packagesPath": "C:\\Users\\zelin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\C#\\HungryNinja\\obj\\",
+      "outputPath": "c:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\DOJO\\C#\\C# Basic\\HungryNinja\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

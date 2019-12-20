@@ -12078,11 +12078,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\C#\\ASP\\RazorFun\\RazorFun.csproj",
+      "projectUniqueName": "c:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\DOJO\\C#\\ASP\\RazorFun\\RazorFun.csproj",
       "projectName": "RazorFun",
-      "projectPath": "C:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\C#\\ASP\\RazorFun\\RazorFun.csproj",
+      "projectPath": "c:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\DOJO\\C#\\ASP\\RazorFun\\RazorFun.csproj",
       "packagesPath": "C:\\Users\\zelin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\C#\\ASP\\RazorFun\\obj\\",
+      "outputPath": "c:\\Users\\zelin\\Desktop\\Code\\UPLOAD TO GIT\\Kent_Jensen\\DOJO\\C#\\ASP\\RazorFun\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
